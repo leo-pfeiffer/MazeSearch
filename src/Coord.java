@@ -28,6 +28,19 @@ public class Coord {
 		return col;
 	}
 
+	/**
+	 * Get the direction of the coordinate.
+	 * Triangle points upwards: 0
+	 * Triangle points downwards: 1
+	 * */
+	public int getDir() {
+		if (row % 2 == 0) {
+			return col % 2 == 0 ? 0 : 1;
+		} else {
+			return col % 2 == 0 ? 1 : 0;
+		}
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (o == null) {
