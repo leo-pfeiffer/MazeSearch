@@ -1,7 +1,7 @@
 public class AStarSearch extends Search {
-    @Override
-    public void setUp(Map map, Coord start, Coord goal) {
 
+    public AStarSearch(Map map, Coord start, Coord goal) {
+        super(map, start, goal);
     }
 
     @Override

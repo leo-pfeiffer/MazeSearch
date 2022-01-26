@@ -88,10 +88,12 @@ public class A1main {
     }
 
     private static void runSearch(String algo, Map map, Coord start, Coord goal) {
+        System.out.println(algo);
         try {
-            Search search = new SearchFactory().makeSearch(algo);
-            search.setUp(map, start, goal);
+            Search search = new SearchFactory().makeSearch(algo, map, start, goal);
             search.runSearch();
+            // todo just for now...
+            search.printSolution();
         } catch (InvalidSearch e) {
             e.printStackTrace();
         }

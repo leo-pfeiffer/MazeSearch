@@ -6,7 +6,7 @@
  *
  */
 
-public enum Map{
+public enum Map {
 
 
 	//************************TEST MAPS as discussed in lectures ******************** 
@@ -93,6 +93,16 @@ public enum Map{
 
 	public int[][] getMap() {
 		return map;
+	}
+
+	public boolean isOnMap(Coord coord) {
+		boolean vertical = coord.getRow() >= 0 && coord.getRow() < map.length;
+		boolean horizontal = coord.getCol() >= 0 && coord.getCol() < map[0].length;
+		return vertical && horizontal;
+	}
+
+	public boolean isIsland(Coord coord) {
+		return map[coord.getRow()][coord.getCol()] == 1;
 	}
 
 

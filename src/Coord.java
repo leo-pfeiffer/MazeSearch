@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.List;
+
 /********************Starter Code
  * 
  * This represents the coordinate data structure (row, column)
@@ -41,15 +44,22 @@ public class Coord {
 		}
 	}
 
+	public HashSet<Integer> getPossibleMoves() {
+
+		if (getDir() == 0) {
+			// Upwards: Can move in directions 1, 2, 3
+			return new HashSet<>(List.of(new Integer[]{1, 2, 3}));
+		} else {
+			// Downwards: Can move in directions 1, 3, 4
+			return new HashSet<>(List.of(new Integer[]{1, 3, 4}));
+		}
+	}
+
 	@Override
 	public boolean equals(Object o) {
-		if (o == null) {
-			return false;
-		} else if (o instanceof Coord) {
-			Coord coord = (Coord) o;
-			return coord.row == row && coord.col == col;
-		}
-		return false;
+		if (o == null || getClass() != o.getClass()) return false;
+		Coord coord = (Coord) o;
+		return coord.row == row && coord.col == col;
 	}
 
 }

@@ -6,6 +6,6 @@ import org.junit.runners.Suite;
  **/
 @RunWith(Suite.class)
 @Suite.SuiteClasses(
-        {CoordTest.class}
+        {CoordTest.class, FrontierTest.class, StateTest.class}
 )
 public class TestSuite { }
