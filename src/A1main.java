@@ -37,7 +37,7 @@ public class A1main {
         // 1) Print the Frontier at each step before polling
 
         boolean uninformed = true;
-        String frontier_string = "";
+        String frontier_string;
 
         if (uninformed) {
 
@@ -154,7 +154,7 @@ public class A1main {
 
     private static boolean isCoord(Coord coord, int r, int c) {
         // check if coordinates are the same as current (r,c)
-        return coord.getR() == r && coord.getC() == c;
+        return coord.getRow() == r && coord.getCol() == c;
     }
 
 

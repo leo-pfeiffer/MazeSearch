@@ -9,34 +9,34 @@
  */
 
 public class Coord {
-	private int r;//row
-	private int c;//column
+	private final int row;
+	private final int col;
 
-	public Coord(int row,int column) {
-		r=row;
-		c=column;
+	public Coord(int row, int column) {
+		this.row = row;
+		this.col = column;
 	}
 
 	public String toString() {
-		return "("+r+","+c+")";
+		return "(" + row + "," + col + ")";
 	}
 
-	public int getR() {
-		return r;
+	public int getRow() {
+		return row;
 	}
-	public int getC() {
-		return c;
+	public int getCol() {
+		return col;
 	}
 
 	@Override
 	public boolean equals(Object o) {
-
-		Coord coord=(Coord) o;
-		if(coord.r==r && coord.c==c) {
-			return true;
+		if (o == null) {
+			return false;
+		} else if (o instanceof Coord) {
+			Coord coord = (Coord) o;
+			return coord.row == row && coord.col == col;
 		}
-		return false; 
-
+		return false;
 	}
 
 }
