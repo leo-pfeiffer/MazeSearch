@@ -4,6 +4,7 @@ SRC_CLASSES := $(shell find ./src/* -name '*.class')
 TEST_CLASSES := $(shell find ./test/* -name '*.class')
 LIB := ./lib/*
 CLASSPATH := $(LIB):src:test
+STACSCHECK := /cs/studres/CS5011/Practicals/A1/Tests
 
 
 .PHONY: compile
@@ -20,6 +21,11 @@ clean:
 # Run JUnit tests
 test:
 	@java -cp $(CLASSPATH):. org.junit.runner.JUnitCore TestSuite
+
+.PHONY: stacscheck
+# Run stacscheck checks (only on school server)
+stacscheck:
+	@stacscheck $(STACSCHECK)
 
 
 .PHONY: help
