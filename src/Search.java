@@ -1,3 +1,7 @@
+/**
+ * Abstract class for search algorithms.
+ * Subclasses must implement the runSearch method.
+ * */
 public abstract class Search {
 
     protected Map map;
@@ -17,6 +21,9 @@ public abstract class Search {
 
     public abstract void runSearch();
 
+    /**
+     * Print the solution path.
+     * */
     public void printSolution() {
         if (solution == null) {
             System.out.println("No solution found.");
@@ -33,8 +40,26 @@ public abstract class Search {
         System.out.println();
     }
 
+
+    /**
+     * Test if the coordinates corresponds to the goal.
+     * */
+    public boolean goalTest(Coord coord) {
+        return coord.equals(goal);
+    }
+
+    /**
+     * Test if the coordinates of a state corresponds to the goal.
+     * */
     public boolean goalTest(State state) {
-        return state.getCoord().equals(goal);
+        return goalTest(state.getCoord());
+    }
+
+    /**
+     * Test if the coordinates of a node correspond to the goal.
+     * */
+    public boolean goalTest(Node node) {
+        return goalTest(node.getState());
     }
 
     public Coord getStart() {
