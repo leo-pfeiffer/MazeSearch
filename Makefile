@@ -1,7 +1,5 @@
 SRC_FILES := $(shell find ./src/* -name '*.java')
 TEST_FILES := $(shell find ./test/* -name '*java')
-SRC_CLASSES := $(shell find ./src/* -name '*.class')
-TEST_CLASSES := $(shell find ./test/* -name '*.class')
 LIB := ./lib/*
 CLASSPATH := $(LIB):src:test
 STACSCHECK := /cs/studres/CS5011/Practicals/A1/Tests
@@ -15,7 +13,9 @@ compile:
 .PHONY: clean
 # Remove java class files
 clean:
-	@rm $(SRC_CLASSES) $(TEST_CLASSES)
+	find ./src/* -name '*.class' -delete
+	find ./test/* -name '*.class' -delete
+
 
 .PHONY: test
 # Run JUnit tests
