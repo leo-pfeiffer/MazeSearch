@@ -62,4 +62,8 @@ public class Coord {
 		return coord.row == row && coord.col == col;
 	}
 
+	@Override
+	public int hashCode() {
+		return row * 31 + col;
+	}
 }

@@ -1,13 +1,12 @@
-import java.util.HashSet;
-
 public abstract class Search {
+
     protected Map map;
     protected Coord start;
     protected State startState;
     protected Coord goal;
     protected Frontier frontier;
     protected Node solution;
-    protected final HashSet<Node> explored = new HashSet<>();
+    protected final ExploredSet explored = new ExploredSet();
 
     public Search(Map map, Coord start, Coord goal) {
         this.map = map;

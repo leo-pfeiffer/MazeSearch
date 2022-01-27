@@ -1,9 +1,9 @@
 import java.util.HashSet;
-import java.util.LinkedList;
+import java.util.Stack;
 
-public class QueueFrontier extends Frontier {
+public class StackFrontier extends Frontier {
 
-    private final LinkedList<Node> queue = new LinkedList<>();
+    private final Stack<Node> stack = new Stack<>();
     private final HashSet<Node> uniqueNodes = new HashSet<>();
 
     @Override
@@ -11,20 +11,20 @@ public class QueueFrontier extends Frontier {
         // only add unique nodes
         if (!uniqueNodes.contains(node)) {
             uniqueNodes.add(node);
-            queue.add(node);
+            stack.push(node);
         }
     }
 
     @Override
     public Node remove() {
-        Node toRemove = queue.remove();
+        Node toRemove = stack.pop();
         uniqueNodes.remove(toRemove);
         return toRemove;
     }
 
     @Override
     public boolean isEmpty() {
-        return queue.isEmpty();
+        return stack.isEmpty();
     }
 
     @Override
@@ -34,6 +34,6 @@ public class QueueFrontier extends Frontier {
 
     @Override
     public int size() {
-        return queue.size();
+        return stack.size();
     }
 }
