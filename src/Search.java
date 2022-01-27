@@ -62,7 +62,7 @@ public abstract class Search {
     public void printSuccess() {
         String path = solutionPath();
         System.out.println(path);
-        System.out.println(solution.getCost()); // todo implement cost
+        System.out.println(solution.getCost());
         System.out.println(explored.size());
     }
 

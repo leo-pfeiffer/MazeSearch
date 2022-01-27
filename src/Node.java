@@ -6,7 +6,6 @@ public class Node {
     private final double cost;
 
     public Node(Node parent, State state, double cost) {
-        // todo how to handle action?
         this.parent = parent;
         this.state = state;
         this.cost = cost;

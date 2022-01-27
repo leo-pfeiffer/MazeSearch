@@ -7,7 +7,7 @@ import java.util.List;
  * and prints the required output
  *
  *
- * @author at258
+ * @author at258, 190026921
  *   
  */
 
@@ -44,6 +44,16 @@ public class Coord {
 		}
 	}
 
+	/**
+	 * Get a set of possible moves (as integers) from the current coordinate.
+	 * RIGHT: 1
+	 * DOWN: 2
+	 * LEFT: 3
+	 * UP: 4
+	 * Upwards: Can move in directions 1, 2, 3
+	 * Downwards: Can move in directions 1, 3, 4
+	 * @return A set of possible moves.
+	 * */
 	public HashSet<Integer> getPossibleMoves() {
 
 		if (getDir() == 0) {
@@ -52,6 +62,25 @@ public class Coord {
 		} else {
 			// Downwards: Can move in directions 1, 3, 4
 			return new HashSet<>(List.of(new Integer[]{1, 3, 4}));
+		}
+	}
+
+	/**
+	 * Get all adjacent coordinates from the current coordinate.
+	 * Upwards: Can move in directions RIGHT, DOWN, LEFT
+	 * Downwards: Can move in directions RIGHT, LEFT, UP
+	 * @return A list of adjacent coordinates.
+	 * */
+	public Coord[] getAdjacentCoords() {
+		Coord RIGHT = new Coord(row, col + 1);
+		Coord DOWN = new Coord(row + 1, col);
+		Coord LEFT = new Coord(row, col - 1);
+		Coord UP = new Coord(row - 1, col);
+
+		if (getDir() == 0) {
+			return new Coord[]{RIGHT, DOWN, LEFT};
+		} else {
+			return new Coord[]{RIGHT, LEFT, UP};
 		}
 	}
 

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class State {
 
@@ -43,43 +42,31 @@ public class State {
         return coord;
     }
 
+    /**
+     * Get a list of all the possible successors of this state.
+     * @return A list of all the possible successors of this state.
+     * */
     public State[] getSuccessorStates() {
         ArrayList<State> successors = new ArrayList<>();
-        HashSet<Integer> possibleMoves = coord.getPossibleMoves();
 
-        int RIGHT = 1;
-        int DOWN = 2;
-        int LEFT = 3;
-        int UP = 4;
-
-
-        // todo move this somewhere more useful
-        if (possibleMoves.contains(RIGHT)) {
-            Coord rightCoord = new Coord(coord.getRow(), coord.getCol() + 1);
-            addStateToSuccessors(successors, rightCoord);
+        // Add applicable adjacent states to the list of successors
+        Coord[] adjacentCoords = coord.getAdjacentCoords();
+        for (Coord coord : adjacentCoords) {
+            addStateToSuccessors(successors, coord);
         }
 
-        if (possibleMoves.contains(DOWN)) {
-            Coord downCoord = new Coord(coord.getRow() + 1, coord.getCol());
-            addStateToSuccessors(successors, downCoord);
-        }
-
-        if (possibleMoves.contains(LEFT)) {
-            Coord leftCoord = new Coord(coord.getRow(), coord.getCol() - 1);
-            addStateToSuccessors(successors, leftCoord);
-        }
-
-        if (possibleMoves.contains(UP)) {
-            Coord upCoord = new Coord(coord.getRow() - 1, coord.getCol());
-            addStateToSuccessors(successors, upCoord);
-        }
-
+        // Convert to array
         State[] successorsArray = new State[successors.size()];
         successors.toArray(successorsArray);
 
         return successorsArray;
     }
 
+    /**
+     * Add a coordinate to the list of successors if it is a valid move, i.e. on the map and not an island.
+     * @param successors The list of successors to add to
+     * @param newStateCoord The coordinate to add
+     * */
     private void addStateToSuccessors(ArrayList<State> successors, Coord newStateCoord) {
         if (map.isOnMap(newStateCoord) && !map.isIsland(newStateCoord)) {
             successors.add(new State(newStateCoord, map));
