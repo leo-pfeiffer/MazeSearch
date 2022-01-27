@@ -36,4 +36,9 @@ public class QueueFrontier extends Frontier {
     public int size() {
         return queue.size();
     }
+
+    @Override
+    public String toString() {
+        return queue.toString();
+    }
 }

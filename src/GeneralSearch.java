@@ -22,6 +22,8 @@ public abstract class GeneralSearch extends Search {
         // traverse tree until goal is found or frontier is empty
         while (!frontier.isEmpty()) {
 
+            frontier.print();
+
             // explore next node from the frontier
             node = frontier.remove();
             explored.add(node);
@@ -29,6 +31,7 @@ public abstract class GeneralSearch extends Search {
             // check if goal is reached
             if (goalTest(node)) {
                 solution = node;
+                printSuccess();
                 return;
             }
 
@@ -36,6 +39,7 @@ public abstract class GeneralSearch extends Search {
             Node[] newNodes = expand(node);
             insertAll(newNodes);
         }
+        printFailure();
     }
 
     /**
@@ -48,7 +52,9 @@ public abstract class GeneralSearch extends Search {
         State[] successorStates = node.getState().getSuccessorStates();
         ArrayList<Node> newNodes = new ArrayList<>();
         for (State successorState : successorStates) {
-            Node newNode = new Node(node, successorState, 0);
+            // create new node from successor state with current node as parent, successorState as state,
+            // and cost incremented by 1
+            Node newNode = new Node(node, successorState, node.getCost() + 1);
             if (!explored.contains(newNode)) {
                 newNodes.add(newNode);
             }

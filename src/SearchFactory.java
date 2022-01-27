@@ -1,6 +1,7 @@
 public class SearchFactory {
 
     public Search makeSearch(String algo, Map map, Coord start, Coord goal) throws InvalidSearch {
+
         switch (algo) {
             case "BFS": // run BFS
                 return new BreadthFirstSearch(map, start, goal);
@@ -12,6 +13,12 @@ public class SearchFactory {
                 return new AStarSearch(map, start, goal);
             default:
                 throw new InvalidSearch(algo);
+        }
+    }
+
+    static class InvalidSearch extends Exception {
+        public InvalidSearch(String errorMessage) {
+            super(errorMessage);
         }
     }
 }

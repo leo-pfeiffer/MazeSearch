@@ -36,4 +36,9 @@ public class StackFrontier extends Frontier {
     public int size() {
         return stack.size();
     }
+
+    @Override
+    public String toString() {
+        return stack.toString();
+    }
 }

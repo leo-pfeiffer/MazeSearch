@@ -13,92 +13,34 @@
 public class A1main {
 
     public static void main(String[] args) {
-        // Example: java A1main BFS JCONF03
 
         // Retrieve input and configuration and run search algorithm
-        Conf conf = Conf.valueOf(args[1]);
-
-
-        // // Uncomment here for debugging only
-        // System.out.println("Configuration:"+args[1]);
-        // System.out.println("Map:");
-        // printMap(conf.getMap(), conf.getS(), conf.getG());
-        // System.out.println("Departure port: Start (r_s,c_s): "+conf.getS());
-        // System.out.println("Destination port: Goal (r_g,c_g): "+conf.getG());
-        // System.out.println("Search algorithm: "+args[0]);
-        // System.out.println();
-
-        // run your search algorithm
-        runSearch(args[0], conf.getMap(), conf.getS(), conf.getG());
-
-        // The system must print the following information from your search methods
-        // All code below is for demonstration purposes, and can be removed
-
-        // 1) Print the Frontier at each step before polling
-
-        boolean uninformed = true;
-        String frontier_string;
-
-        if (uninformed) {
-
-            // starting point (1,1),
-            // insert node in the frontier, then print the frontier:
-            frontier_string = "[(0,0)]";
-
-            System.out.println(frontier_string);
-
-            // extract (0,0)
-            // insert successors in the frontier (0,1),(1,0) , then print the frontier,  and repeat for all steps until a path is found or not
-            frontier_string = "[(0,1),(1,0)]\n"
-                    + "[(1,0),(0,2)]\n"
-                    + "[(0,2),(1,1)]\n"
-                    + "[(1,1),(1,2)]\n"
-                    + "[(1,2),(2,1)]\n"
-                    + "[(2,1)]\n"
-                    + "[(2,2),(2,0)]";
-            System.out.println(frontier_string);
-
-
-        } else {
-            // for informed searches the nodes in the frontier must also include the f-cost
-            // for example
-            frontier_string = "[(0,0):4.0]\n"
-                    + "[(0,1):3.0,(1,0):3.0]\n"
-                    + "...";
-            System.out.println(frontier_string);
-
-        }
-
-        // 2) The final three lines must be the path, path cost, and number of nodes visited/explored, in this order
-
-        boolean path_found = true;
-        String path_string = "(0,0)(1,0)(1,1)(2,1)(2,2)";
-        double path_cost = 4;
-        int n_explored = 8;
-
-        if (path_found) {
-            System.out.println(path_string);
-            System.out.println(path_cost);
-        } else {
-            System.out.println("fail");
-        }
-
-        System.out.println(n_explored);
-
-    }
-
-    private static void runSearch(String algo, Map map, Coord start, Coord goal) {
-        System.out.println(algo);
+        Search search;
         try {
-            Search search = new SearchFactory().makeSearch(algo, map, start, goal);
-            search.runSearch();
-            // todo just for now...
-            search.printSolution();
-        } catch (InvalidSearch e) {
+            search = parseArguments(args);
+        } catch (Exception e) {
             e.printStackTrace();
+            exitWithException();
+            return;
         }
+
+        // run search algorithm
+        search.runSearch();
     }
 
+    private static void exitWithException() {
+        System.out.println("Invalid arguments.");
+        System.out.println("Usage: java A1main <Algo> <ConfID>");
+        System.exit(1);
+    }
+
+    private static Search parseArguments(String[] args) throws SearchFactory.InvalidSearch {
+        Conf conf = Conf.valueOf(args[1]);
+        Map map = conf.getMap();
+        Coord start = conf.getS();
+        Coord goal = conf.getG();
+        return new SearchFactory().makeSearch(args[0], map, start, goal);
+    }
 
     private static void printMap(Map m, Coord init, Coord goal) {
 
@@ -150,8 +92,6 @@ public class A1main {
             System.out.println(flip(right));
         }
         System.out.println();
-
-
     }
 
     private static boolean isCoord(Coord coord, int r, int c) {

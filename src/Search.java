@@ -22,26 +22,6 @@ public abstract class Search {
     public abstract void runSearch();
 
     /**
-     * Print the solution path.
-     * */
-    public void printSolution() {
-        if (solution == null) {
-            System.out.println("No solution found.");
-            return;
-        }
-        System.out.println("Solution found:");
-        Node[] tree = solution.getTree();
-        for (Node node : tree) {
-            System.out.print(node.getState().getCoord());
-            if (node.getDepth() != solution.getDepth()) {
-                System.out.print(" -> ");
-            }
-        }
-        System.out.println();
-    }
-
-
-    /**
      * Test if the coordinates corresponds to the goal.
      * */
     public boolean goalTest(Coord coord) {
@@ -72,5 +52,30 @@ public abstract class Search {
 
     public Coord getGoal() {
         return goal;
+    }
+
+    public void printFailure() {
+        System.out.println("fail");
+        System.out.println(explored.size());
+    }
+
+    public void printSuccess() {
+        String path = solutionPath();
+        System.out.println(path);
+        System.out.println(solution.getCost()); // todo implement cost
+        System.out.println(explored.size());
+    }
+
+    /**
+     * Return a string representation of the solution path.
+     * */
+    private String solutionPath() {
+        if (solution == null) return "";
+        StringBuilder sb = new StringBuilder();
+        Node[] tree = solution.getTree();
+        for (Node node : tree) {
+            sb.append(node.getState().getCoord());
+        }
+        return sb.toString();
     }
 }

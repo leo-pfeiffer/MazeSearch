@@ -1,13 +1,11 @@
-import javax.management.NotificationEmitter;
-
 public class Node {
 
     private final Node parent;
     private final State state;
     private int depth;
-    private final int cost;
+    private final double cost;
 
-    public Node(Node parent, State state, int cost) {
+    public Node(Node parent, State state, double cost) {
         // todo how to handle action?
         this.parent = parent;
         this.state = state;
@@ -33,7 +31,7 @@ public class Node {
         return depth;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
@@ -47,6 +45,11 @@ public class Node {
         } else {
             this.depth = parent.getDepth() + 1;
         }
+    }
+
+    @Override
+    public String toString() {
+        return state.getCoord().toString();
     }
 
     @Override
@@ -67,7 +70,7 @@ public class Node {
         int result = parent != null ? parent.hashCode() : 0;
         result = 31 * result + state.hashCode();
         result = 31 * result + depth;
-        result = 31 * result + cost;
+        result = (int) (31 * result + cost);
         return result;
     }
 
