@@ -7,6 +7,9 @@ public class BestFirstSearch extends GeneralSearch {
         calculateCost(startNode);
     }
 
+    /**
+     * Overrides the method in GeneralSearch since we also need to calculate the hCost and fCost.
+     * */
     @Override
     public void insertAll(Node[] nodes) {
         for (Node node : nodes) {
@@ -15,6 +18,9 @@ public class BestFirstSearch extends GeneralSearch {
         }
     }
 
+    /**
+     * Calculate the hCost and fCost of the node.
+     * */
     private void calculateCost(Node node) {
         Coord coord = node.getState().getCoord();
         double hCost = coord.getManhattanDistance(goal);
