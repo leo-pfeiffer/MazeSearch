@@ -16,6 +16,10 @@ public class State {
         return "State" + coord.toString();
     }
 
+    /**
+     * Two State objects are equal if their coordinates are equal
+     * and their map is equal.
+     * */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
