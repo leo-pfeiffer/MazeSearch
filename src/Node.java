@@ -4,6 +4,8 @@ public class Node {
     private final State state;
     private int depth;
     private final double cost;
+    private int hCost;
+    private int fCost;
 
     public Node(Node parent, State state, double cost) {
         this.parent = parent;
@@ -73,4 +75,19 @@ public class Node {
         return result;
     }
 
+    public int getHCost() {
+        return hCost;
+    }
+
+    public void setHCost(int hCost) {
+        this.hCost = hCost;
+    }
+
+    public int getFCost() {
+        return fCost;
+    }
+
+    public void setFCost(int fCost) {
+        this.fCost = fCost;
+    }
 }
