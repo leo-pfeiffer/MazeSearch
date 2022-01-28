@@ -10,6 +10,7 @@ public abstract class Search {
     protected Coord goal;
     protected Frontier frontier;
     protected Node solution;
+    protected Node startNode;
     protected final ExploredSet explored = new ExploredSet();
 
     public Search(Map map, Coord start, Coord goal) {

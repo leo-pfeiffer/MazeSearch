@@ -16,7 +16,7 @@ public abstract class GeneralSearch extends Search {
     public void runSearch() {
 
         // create initial node and add to frontier
-        Node node = new Node(null, startState, 0);
+        Node node = startNode;
         frontier.insert(node);
 
         // traverse tree until goal is found or frontier is empty

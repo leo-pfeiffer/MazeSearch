@@ -6,8 +6,8 @@ public class Node {
     private final State state;
     private int depth;
     private final double cost;
-    private int hCost;
-    private int fCost;
+    private double hCost;
+    private double fCost;
 
     public Node(Node parent, State state, double cost) {
         this.parent = parent;
@@ -19,7 +19,10 @@ public class Node {
     public static class NodeComparator implements Comparator<Node> {
         @Override
         public int compare(Node o1, Node o2) {
-            return o1.getFCost() - o2.getFCost();
+            if (o1.getFCost() == o2.getFCost()) {
+                return 0;
+            }
+            return o1.getFCost() < o2.getFCost() ? -1 : 1;
         }
     }
 
@@ -84,19 +87,19 @@ public class Node {
         return result;
     }
 
-    public int getHCost() {
+    public double getHCost() {
         return hCost;
     }
 
-    public void setHCost(int hCost) {
+    public void setHCost(double hCost) {
         this.hCost = hCost;
     }
 
-    public int getFCost() {
+    public double getFCost() {
         return fCost;
     }
 
-    public void setFCost(int fCost) {
+    public void setFCost(double fCost) {
         this.fCost = fCost;
     }
 }
