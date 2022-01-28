@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Node {
 
     private final Node parent;
@@ -12,6 +14,13 @@ public class Node {
         this.state = state;
         this.cost = cost;
         setDepthFromParent();
+    }
+
+    public static class NodeComparator implements Comparator<Node> {
+        @Override
+        public int compare(Node o1, Node o2) {
+            return o1.getFCost() - o2.getFCost();
+        }
     }
 
     public Node getParent() {

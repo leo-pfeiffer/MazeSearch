@@ -3,8 +3,7 @@ import java.util.PriorityQueue;
 
 public class PriorityQueueFrontier extends Frontier {
 
-    private final NodeComparator comparator = new NodeComparator();
-    private final PriorityQueue<Node> queue = new PriorityQueue<>(comparator);
+    private final PriorityQueue<Node> queue = new PriorityQueue<>(new Node.NodeComparator());
     protected final HashSet<Node> uniqueNodes = new HashSet<>();
 
     @Override
