@@ -1,10 +1,16 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Stack;
 
 public class StackFrontier extends Frontier {
 
     private final Stack<Node> stack = new Stack<>();
     private final HashSet<Node> uniqueNodes = new HashSet<>();
+
+    @Override
+    public Iterator<Node> iterator() {
+        return stack.iterator();
+    }
 
     @Override
     public void insert(Node node) {

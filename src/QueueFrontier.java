@@ -1,10 +1,16 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class QueueFrontier extends Frontier {
 
     private final LinkedList<Node> queue = new LinkedList<>();
     private final HashSet<Node> uniqueNodes = new HashSet<>();
+
+    @Override
+    public Iterator<Node> iterator() {
+        return queue.iterator();
+    }
 
     @Override
     public void insert(Node node) {

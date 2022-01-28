@@ -118,4 +118,9 @@ public class CoordTest {
         assertEquals(moves[1], LEFT);
         assertEquals(moves[2], UP);
     }
+
+    @Test
+    public void testGetManhattanDistance() {
+        // todo
+    }
 }

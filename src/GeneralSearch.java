@@ -55,13 +55,17 @@ public abstract class GeneralSearch extends Search {
             // create new node from successor state with current node as parent, successorState as state,
             // and cost incremented by 1
             Node newNode = new Node(node, successorState, node.getCost() + 1);
-            if (!explored.contains(newNode)) {
-                newNodes.add(newNode);
-            }
+            addToSuccessors(newNode, newNodes);
         }
         Node[] newNodesArray = new Node[newNodes.size()];
         newNodes.toArray(newNodesArray);
         return newNodesArray;
+    }
+
+    protected void addToSuccessors(Node node, ArrayList<Node> newNodes) {
+        if (!explored.contains(node)) {
+            newNodes.add(node);
+        }
     }
 
     /**

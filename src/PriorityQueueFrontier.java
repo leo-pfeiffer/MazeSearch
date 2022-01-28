@@ -1,10 +1,23 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class PriorityQueueFrontier extends Frontier {
 
-    private final PriorityQueue<Node> queue = new PriorityQueue<>(new Node.NodeComparator());
-    protected final HashSet<Node> uniqueNodes = new HashSet<>();
+    private PriorityQueue<Node> queue = new PriorityQueue<>(new Node.NodeComparator());
+    protected HashSet<Node> uniqueNodes = new HashSet<>();
+
+    public Iterator<Node> iterator() {
+        return queue.iterator();
+    }
+
+    public void setQueue(PriorityQueue<Node> queue) {
+        this.queue = queue;
+    }
+
+    public void setUniqueNodes(HashSet<Node> uniqueNodes) {
+        this.uniqueNodes = uniqueNodes;
+    }
 
     @Override
     public void insert(Node node) {
