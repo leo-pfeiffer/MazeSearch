@@ -9,6 +9,11 @@ public abstract class Frontier {
     public abstract String toString();
     public abstract Iterator<Node> iterator();
     public void print() {
-        System.out.println(this);
+        Iterator<Node> it = iterator();
+        System.out.print("[");
+        while (it.hasNext()) {
+            System.out.print(it.next());
+        }
+        System.out.println("]");
     }
 }
