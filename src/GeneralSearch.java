@@ -21,25 +21,28 @@ public abstract class GeneralSearch extends Search {
 
         // traverse tree until goal is found or frontier is empty
         while (!frontier.isEmpty()) {
-
-            frontier.print();
-
-            // explore next node from the frontier
-            node = frontier.remove();
-            explored.add(node);
-
-            // check if goal is reached
-            if (goalTest(node)) {
-                solution = node;
-                printSuccess();
-                return;
-            }
-
-            // expand on current node
-            Node[] newNodes = expand(node);
-            insertAll(newNodes);
+            searchIteration();
         }
         printFailure();
+    }
+
+    public void searchIteration() {
+        frontier.print();
+
+        // explore next node from the frontier
+        Node node = frontier.remove();
+        explored.add(node);
+
+        // check if goal is reached
+        if (goalTest(node)) {
+            solution = node;
+            printSuccess();
+            return;
+        }
+
+        // expand on current node
+        Node[] newNodes = expand(node);
+        insertAll(newNodes);
     }
 
     /**
