@@ -10,6 +10,7 @@ public abstract class Frontier {
     public abstract String toString();
     public abstract Iterator<Node> iterator();
     public abstract HashSet<Node> toSet();
+
     public void print() {
         Iterator<Node> it = iterator();
         System.out.print("[");
@@ -20,5 +21,16 @@ public abstract class Frontier {
             }
         }
         System.out.println("]");
+    }
+
+    public Node getNode(Node node) {
+        Iterator<Node> it = iterator();
+        while (it.hasNext()) {
+            Node n = it.next();
+            if (n.equals(node)) {
+                return n;
+            }
+        }
+        return null;
     }
 }

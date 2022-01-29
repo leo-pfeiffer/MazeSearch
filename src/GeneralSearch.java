@@ -16,33 +16,39 @@ public abstract class GeneralSearch extends Search {
     public void runSearch() {
 
         // create initial node and add to frontier
-        Node node = startNode;
-        frontier.insert(node);
+        frontier.insert(startNode);
 
         // traverse tree until goal is found or frontier is empty
         while (!frontier.isEmpty()) {
-            searchIteration();
+            if (searchIteration()) return;
         }
         printFailure();
     }
 
-    public void searchIteration() {
+    public boolean searchIteration() {
         frontier.print();
 
         // explore next node from the frontier
         Node node = frontier.remove();
         explored.add(node);
 
-        // check if goal is reached
-        if (goalTest(node)) {
-            solution = node;
-            printSuccess();
-            return;
-        }
+        // check the termination condition
+        if (terminationCheck(node)) return true;
 
         // expand on current node
         Node[] newNodes = expand(node);
         insertAll(newNodes);
+        return false;
+    }
+
+    public boolean terminationCheck(Node node) {
+        // check if goal is reached
+        if (goalTest(node)) {
+            solution = node;
+            printSuccess();
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -77,6 +83,12 @@ public abstract class GeneralSearch extends Search {
      * @param nodes Array of nodes to insert
      * */
     public void insertAll(Node[] nodes) {
+        for (Node node : nodes) {
+            this.frontier.insert(node);
+        }
+    }
+
+    public void insertAll(Node[] nodes, Frontier frontier) {
         for (Node node : nodes) {
             frontier.insert(node);
         }

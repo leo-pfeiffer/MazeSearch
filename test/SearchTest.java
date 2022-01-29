@@ -32,6 +32,12 @@ public class SearchTest {
         search.runSearch();
     }
 
+    @Test
+    public void testBidirectional() {
+        Search search = new BidirectionalSearch(map, start, goal);
+        search.runSearch();
+    }
+
 
 
 
