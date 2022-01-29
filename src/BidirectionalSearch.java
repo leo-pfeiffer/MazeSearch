@@ -2,7 +2,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-// TODO TEST!!!
+// TODO TEST!!! esp. if we don't use BFS
+// TODO maybe refactor to avoid duplication
 public class BidirectionalSearch extends GeneralSearch {
 
     private final Search fSearch;
