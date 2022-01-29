@@ -11,6 +11,11 @@ public class PriorityQueueFrontier extends Frontier {
         return queue.iterator();
     }
 
+    @Override
+    public HashSet<Node> toSet() {
+        return uniqueNodes;
+    }
+
     public void setQueue(PriorityQueue<Node> queue) {
         this.queue = queue;
     }

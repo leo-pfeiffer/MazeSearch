@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Iterator;
 
 public abstract class Frontier {
@@ -8,6 +9,7 @@ public abstract class Frontier {
     public abstract int size();
     public abstract String toString();
     public abstract Iterator<Node> iterator();
+    public abstract HashSet<Node> toSet();
     public void print() {
         Iterator<Node> it = iterator();
         System.out.print("[");

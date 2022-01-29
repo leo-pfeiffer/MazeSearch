@@ -13,6 +13,11 @@ public class StackFrontier extends Frontier {
     }
 
     @Override
+    public HashSet<Node> toSet() {
+        return uniqueNodes;
+    }
+
+    @Override
     public void insert(Node node) {
         // only add unique nodes
         if (!uniqueNodes.contains(node)) {
