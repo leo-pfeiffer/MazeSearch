@@ -23,24 +23,12 @@ public abstract class Search {
     public abstract void runSearch();
 
     /**
-     * Test if the coordinates corresponds to the goal.
-     * */
-    public boolean goalTest(Coord coord) {
-        return coord.equals(goal);
-    }
-
-    /**
-     * Test if the coordinates of a state corresponds to the goal.
-     * */
-    public boolean goalTest(State state) {
-        return goalTest(state.getCoord());
-    }
-
-    /**
      * Test if the coordinates of a node correspond to the goal.
      * */
     public boolean goalTest(Node node) {
-        return goalTest(node.getState());
+        State state = node.getState();
+        Coord coord = state.getCoord();
+        return coord.equals(goal);
     }
 
     public Coord getStart() {
