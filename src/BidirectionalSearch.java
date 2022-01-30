@@ -8,6 +8,7 @@ public class BidirectionalSearch extends GeneralSearch {
     private final Search bSearch;
     private final Node goalNode;
 
+    // todo add option to set the second algorithm
     public BidirectionalSearch(Map map, Coord start, Coord goal) {
         super(map, start, goal);
         goalNode = new Node(null, new State(goal, map), 0);
