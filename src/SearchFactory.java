@@ -1,6 +1,6 @@
 public class SearchFactory {
 
-    public Search makeSearch(String algo, Map map, Coord start, Coord goal) throws InvalidSearch {
+    public static Search makeSearch(String algo, Map map, Coord start, Coord goal) throws InvalidSearch {
 
         switch (algo) {
             case "BFS": // run BFS
@@ -18,7 +18,7 @@ public class SearchFactory {
         }
     }
 
-    public Search makeSearch(String algo, String algo2, Map map, Coord start, Coord goal) throws InvalidSearch {
+    public static Search makeSearch(String algo, String algo2, Map map, Coord start, Coord goal) throws InvalidSearch {
 
         if (!algo.equals("BDS")) throw new InvalidSearch(algo + " cannot have secondary algorithm.");
         if (algo2.equals("BDS")) throw new InvalidSearch("Cannot use BDS with BDS");

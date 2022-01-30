@@ -77,4 +77,8 @@ public abstract class Search {
         }
         return sb.toString();
     }
+
+    public int getExploredNodeCount() {
+        return explored.size();
+    }
 }

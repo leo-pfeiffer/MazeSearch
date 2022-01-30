@@ -40,9 +40,9 @@ public class A1main {
         Coord start = conf.getS();
         Coord goal = conf.getG();
         if (args.length == 2) {
-            return new SearchFactory().makeSearch(args[0], map, start, goal);
+            return SearchFactory.makeSearch(args[0], map, start, goal);
         } else if (args.length == 3) {
-            return new SearchFactory().makeSearch(args[0], args[2], map, start, goal);
+            return SearchFactory.makeSearch(args[0], args[2], map, start, goal);
         } else {
             throw new IllegalArgumentException("Invalid arguments.");
         }
