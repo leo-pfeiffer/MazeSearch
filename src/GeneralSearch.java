@@ -41,6 +41,11 @@ public abstract class GeneralSearch extends Search {
         return false;
     }
 
+    /**
+     * Checks if the given node is the goal node and hence if the search should terminate.
+     * @param node Node to check
+     * @return True if the node is the goal node, false otherwise
+     * */
     public boolean terminationCheck(Node node) {
         // check if goal is reached
         if (goalTest(node)) {
@@ -71,6 +76,11 @@ public abstract class GeneralSearch extends Search {
         return newNodesArray;
     }
 
+    /**
+     * Add the node to the array list of new nodes if it is not already contained in the set of explored nodes.
+     * @param node Node to add
+     * @param newNodes Array list of new nodes
+     * */
     protected void addToSuccessors(Node node, ArrayList<Node> newNodes) {
         if (!explored.contains(node)) {
             newNodes.add(node);
@@ -84,13 +94,23 @@ public abstract class GeneralSearch extends Search {
      * */
     public void insertAll(Node[] nodes) {
         for (Node node : nodes) {
-            this.frontier.insert(node);
+            if (!explored.contains(node)) {
+                this.frontier.insert(node);
+            }
         }
     }
 
-    public void insertAll(Node[] nodes, Frontier frontier) {
+    /**
+     * Inserts nodes into specified frontier if they are not already in explored.
+     * @param nodes Array of nodes to insert
+     * @param frontier Frontier to insert nodes into
+     * @param explored Set of explored nodes to check against
+     * */
+    public void insertAll(Node[] nodes, Frontier frontier, ExploredSet explored) {
         for (Node node : nodes) {
-            frontier.insert(node);
+            if (!explored.contains(node)) {
+                frontier.insert(node);
+            }
         }
     }
 }

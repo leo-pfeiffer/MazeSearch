@@ -43,11 +43,21 @@ public abstract class Search {
         return goal;
     }
 
+    public Node getSolution() {
+        return solution;
+    }
+
+    /**
+     * Prints failure message and number of explored nodes on unsuccessful search.
+     * */
     public void printFailure() {
         System.out.println("fail");
         System.out.println(explored.size());
     }
 
+    /**
+     * Prints the solution path, cost, and number of explored nodes on successful search.
+     * */
     public void printSuccess() {
         String path = solutionPath();
         System.out.println(path);
@@ -58,7 +68,7 @@ public abstract class Search {
     /**
      * Return a string representation of the solution path.
      * */
-    private String solutionPath() {
+    public String solutionPath() {
         if (solution == null) return "";
         StringBuilder sb = new StringBuilder();
         Node[] tree = solution.getTree();
