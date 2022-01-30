@@ -11,6 +11,8 @@ public class SearchFactory {
                 return new BestFirstSearch(map, start, goal);
             case "AStar": // run AStar
                 return new AStarSearch(map, start, goal);
+            case "BDS": // run Bidirectional Search
+                return new BidirectionalSearch(map, start, goal);
             default:
                 throw new InvalidSearch(algo);
         }
