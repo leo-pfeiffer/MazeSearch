@@ -1,741 +1,741 @@
 [
   {
-    "confName": "CONF0",
-    "algorithmName": "BFS",
+    "conf": "CONF0",
+    "algorithm": "BFS",
     "exploredNodeCount": 34,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF0",
-    "algorithmName": "DFS",
+    "conf": "CONF0",
+    "algorithm": "DFS",
     "exploredNodeCount": 31,
     "pathCost": 14.0
   },
   {
-    "confName": "CONF0",
-    "algorithmName": "BestF",
+    "conf": "CONF0",
+    "algorithm": "BestF",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF0",
-    "algorithmName": "AStar",
+    "conf": "CONF0",
+    "algorithm": "AStar",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF0",
-    "algorithmName": "BDS",
+    "conf": "CONF0",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF1",
-    "algorithmName": "BFS",
+    "conf": "CONF1",
+    "algorithm": "BFS",
     "exploredNodeCount": 33,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF1",
-    "algorithmName": "DFS",
+    "conf": "CONF1",
+    "algorithm": "DFS",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF1",
-    "algorithmName": "BestF",
+    "conf": "CONF1",
+    "algorithm": "BestF",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF1",
-    "algorithmName": "AStar",
+    "conf": "CONF1",
+    "algorithm": "AStar",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF1",
-    "algorithmName": "BDS",
+    "conf": "CONF1",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF2",
-    "algorithmName": "BFS",
+    "conf": "CONF2",
+    "algorithm": "BFS",
     "exploredNodeCount": 33,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF2",
-    "algorithmName": "DFS",
+    "conf": "CONF2",
+    "algorithm": "DFS",
     "exploredNodeCount": 15,
     "pathCost": 14.0
   },
   {
-    "confName": "CONF2",
-    "algorithmName": "BestF",
+    "conf": "CONF2",
+    "algorithm": "BestF",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF2",
-    "algorithmName": "AStar",
+    "conf": "CONF2",
+    "algorithm": "AStar",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF2",
-    "algorithmName": "BDS",
+    "conf": "CONF2",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF3",
-    "algorithmName": "BFS",
+    "conf": "CONF3",
+    "algorithm": "BFS",
     "exploredNodeCount": 28,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF3",
-    "algorithmName": "DFS",
+    "conf": "CONF3",
+    "algorithm": "DFS",
     "exploredNodeCount": 15,
     "pathCost": 14.0
   },
   {
-    "confName": "CONF3",
-    "algorithmName": "BestF",
+    "conf": "CONF3",
+    "algorithm": "BestF",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF3",
-    "algorithmName": "AStar",
+    "conf": "CONF3",
+    "algorithm": "AStar",
     "exploredNodeCount": 15,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF3",
-    "algorithmName": "BDS",
+    "conf": "CONF3",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF4",
-    "algorithmName": "BFS",
+    "conf": "CONF4",
+    "algorithm": "BFS",
     "exploredNodeCount": 32,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF4",
-    "algorithmName": "DFS",
+    "conf": "CONF4",
+    "algorithm": "DFS",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF4",
-    "algorithmName": "BestF",
+    "conf": "CONF4",
+    "algorithm": "BestF",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF4",
-    "algorithmName": "AStar",
+    "conf": "CONF4",
+    "algorithm": "AStar",
     "exploredNodeCount": 15,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF4",
-    "algorithmName": "BDS",
+    "conf": "CONF4",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF5",
-    "algorithmName": "BFS",
+    "conf": "CONF5",
+    "algorithm": "BFS",
     "exploredNodeCount": 22,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF5",
-    "algorithmName": "DFS",
+    "conf": "CONF5",
+    "algorithm": "DFS",
     "exploredNodeCount": 21,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF5",
-    "algorithmName": "BestF",
+    "conf": "CONF5",
+    "algorithm": "BestF",
     "exploredNodeCount": 11,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF5",
-    "algorithmName": "AStar",
+    "conf": "CONF5",
+    "algorithm": "AStar",
     "exploredNodeCount": 13,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF5",
-    "algorithmName": "BDS",
+    "conf": "CONF5",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF6",
-    "algorithmName": "BFS",
+    "conf": "CONF6",
+    "algorithm": "BFS",
     "exploredNodeCount": 20,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF6",
-    "algorithmName": "DFS",
+    "conf": "CONF6",
+    "algorithm": "DFS",
     "exploredNodeCount": 13,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF6",
-    "algorithmName": "BestF",
+    "conf": "CONF6",
+    "algorithm": "BestF",
     "exploredNodeCount": 13,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF6",
-    "algorithmName": "AStar",
+    "conf": "CONF6",
+    "algorithm": "AStar",
     "exploredNodeCount": 16,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF6",
-    "algorithmName": "BDS",
+    "conf": "CONF6",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 10.0
   },
   {
-    "confName": "CONF7",
-    "algorithmName": "BFS",
+    "conf": "CONF7",
+    "algorithm": "BFS",
     "exploredNodeCount": 19,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF7",
-    "algorithmName": "DFS",
+    "conf": "CONF7",
+    "algorithm": "DFS",
     "exploredNodeCount": 10,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF7",
-    "algorithmName": "BestF",
+    "conf": "CONF7",
+    "algorithm": "BestF",
     "exploredNodeCount": 12,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF7",
-    "algorithmName": "AStar",
+    "conf": "CONF7",
+    "algorithm": "AStar",
     "exploredNodeCount": 12,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF7",
-    "algorithmName": "BDS",
+    "conf": "CONF7",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF8",
-    "algorithmName": "BFS",
+    "conf": "CONF8",
+    "algorithm": "BFS",
     "exploredNodeCount": 17,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF8",
-    "algorithmName": "DFS",
+    "conf": "CONF8",
+    "algorithm": "DFS",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF8",
-    "algorithmName": "BestF",
+    "conf": "CONF8",
+    "algorithm": "BestF",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF8",
-    "algorithmName": "AStar",
+    "conf": "CONF8",
+    "algorithm": "AStar",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF8",
-    "algorithmName": "BDS",
+    "conf": "CONF8",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF9",
-    "algorithmName": "BFS",
+    "conf": "CONF9",
+    "algorithm": "BFS",
     "exploredNodeCount": 16,
     "pathCost": 7.0
   },
   {
-    "confName": "CONF9",
-    "algorithmName": "DFS",
+    "conf": "CONF9",
+    "algorithm": "DFS",
     "exploredNodeCount": 14,
     "pathCost": 13.0
   },
   {
-    "confName": "CONF9",
-    "algorithmName": "BestF",
+    "conf": "CONF9",
+    "algorithm": "BestF",
     "exploredNodeCount": 14,
     "pathCost": 13.0
   },
   {
-    "confName": "CONF9",
-    "algorithmName": "AStar",
+    "conf": "CONF9",
+    "algorithm": "AStar",
     "exploredNodeCount": 14,
     "pathCost": 7.0
   },
   {
-    "confName": "CONF9",
-    "algorithmName": "BDS",
+    "conf": "CONF9",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 7.0
   },
   {
-    "confName": "CONF10",
-    "algorithmName": "BFS",
+    "conf": "CONF10",
+    "algorithm": "BFS",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF10",
-    "algorithmName": "DFS",
+    "conf": "CONF10",
+    "algorithm": "DFS",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF10",
-    "algorithmName": "BestF",
+    "conf": "CONF10",
+    "algorithm": "BestF",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF10",
-    "algorithmName": "AStar",
+    "conf": "CONF10",
+    "algorithm": "AStar",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF10",
-    "algorithmName": "BDS",
+    "conf": "CONF10",
+    "algorithm": "BDS",
     "exploredNodeCount": 0
   },
   {
-    "confName": "CONF11",
-    "algorithmName": "BFS",
+    "conf": "CONF11",
+    "algorithm": "BFS",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF11",
-    "algorithmName": "DFS",
+    "conf": "CONF11",
+    "algorithm": "DFS",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF11",
-    "algorithmName": "BestF",
+    "conf": "CONF11",
+    "algorithm": "BestF",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF11",
-    "algorithmName": "AStar",
+    "conf": "CONF11",
+    "algorithm": "AStar",
     "exploredNodeCount": 1
   },
   {
-    "confName": "CONF11",
-    "algorithmName": "BDS",
+    "conf": "CONF11",
+    "algorithm": "BDS",
     "exploredNodeCount": 0
   },
   {
-    "confName": "CONF12",
-    "algorithmName": "BFS",
+    "conf": "CONF12",
+    "algorithm": "BFS",
     "exploredNodeCount": 11,
     "pathCost": 6.0
   },
   {
-    "confName": "CONF12",
-    "algorithmName": "DFS",
+    "conf": "CONF12",
+    "algorithm": "DFS",
     "exploredNodeCount": 22,
     "pathCost": 6.0
   },
   {
-    "confName": "CONF12",
-    "algorithmName": "BestF",
+    "conf": "CONF12",
+    "algorithm": "BestF",
     "exploredNodeCount": 8,
     "pathCost": 6.0
   },
   {
-    "confName": "CONF12",
-    "algorithmName": "AStar",
+    "conf": "CONF12",
+    "algorithm": "AStar",
     "exploredNodeCount": 8,
     "pathCost": 6.0
   },
   {
-    "confName": "CONF12",
-    "algorithmName": "BDS",
+    "conf": "CONF12",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 6.0
   },
   {
-    "confName": "CONF13",
-    "algorithmName": "BFS",
+    "conf": "CONF13",
+    "algorithm": "BFS",
     "exploredNodeCount": 21,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF13",
-    "algorithmName": "DFS",
+    "conf": "CONF13",
+    "algorithm": "DFS",
     "exploredNodeCount": 16,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF13",
-    "algorithmName": "BestF",
+    "conf": "CONF13",
+    "algorithm": "BestF",
     "exploredNodeCount": 13,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF13",
-    "algorithmName": "AStar",
+    "conf": "CONF13",
+    "algorithm": "AStar",
     "exploredNodeCount": 20,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF13",
-    "algorithmName": "BDS",
+    "conf": "CONF13",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 12.0
   },
   {
-    "confName": "CONF14",
-    "algorithmName": "BFS",
+    "conf": "CONF14",
+    "algorithm": "BFS",
     "exploredNodeCount": 23,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF14",
-    "algorithmName": "DFS",
+    "conf": "CONF14",
+    "algorithm": "DFS",
     "exploredNodeCount": 15,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF14",
-    "algorithmName": "BestF",
+    "conf": "CONF14",
+    "algorithm": "BestF",
     "exploredNodeCount": 14,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF14",
-    "algorithmName": "AStar",
+    "conf": "CONF14",
+    "algorithm": "AStar",
     "exploredNodeCount": 19,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF14",
-    "algorithmName": "BDS",
+    "conf": "CONF14",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF15",
-    "algorithmName": "BFS",
+    "conf": "CONF15",
+    "algorithm": "BFS",
     "exploredNodeCount": 74,
     "pathCost": 18.0
   },
   {
-    "confName": "CONF15",
-    "algorithmName": "DFS",
+    "conf": "CONF15",
+    "algorithm": "DFS",
     "exploredNodeCount": 82,
     "pathCost": 28.0
   },
   {
-    "confName": "CONF15",
-    "algorithmName": "BestF",
+    "conf": "CONF15",
+    "algorithm": "BestF",
     "exploredNodeCount": 26,
     "pathCost": 22.0
   },
   {
-    "confName": "CONF15",
-    "algorithmName": "AStar",
+    "conf": "CONF15",
+    "algorithm": "AStar",
     "exploredNodeCount": 51,
     "pathCost": 20.0
   },
   {
-    "confName": "CONF15",
-    "algorithmName": "BDS",
+    "conf": "CONF15",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 18.0
   },
   {
-    "confName": "CONF16",
-    "algorithmName": "BFS",
+    "conf": "CONF16",
+    "algorithm": "BFS",
     "exploredNodeCount": 14,
     "pathCost": 5.0
   },
   {
-    "confName": "CONF16",
-    "algorithmName": "DFS",
+    "conf": "CONF16",
+    "algorithm": "DFS",
     "exploredNodeCount": 88,
     "pathCost": 5.0
   },
   {
-    "confName": "CONF16",
-    "algorithmName": "BestF",
+    "conf": "CONF16",
+    "algorithm": "BestF",
     "exploredNodeCount": 6,
     "pathCost": 5.0
   },
   {
-    "confName": "CONF16",
-    "algorithmName": "AStar",
+    "conf": "CONF16",
+    "algorithm": "AStar",
     "exploredNodeCount": 8,
     "pathCost": 5.0
   },
   {
-    "confName": "CONF16",
-    "algorithmName": "BDS",
+    "conf": "CONF16",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 5.0
   },
   {
-    "confName": "CONF17",
-    "algorithmName": "BFS",
+    "conf": "CONF17",
+    "algorithm": "BFS",
     "exploredNodeCount": 64,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF17",
-    "algorithmName": "DFS",
+    "conf": "CONF17",
+    "algorithm": "DFS",
     "exploredNodeCount": 83,
     "pathCost": 27.0
   },
   {
-    "confName": "CONF17",
-    "algorithmName": "BestF",
+    "conf": "CONF17",
+    "algorithm": "BestF",
     "exploredNodeCount": 13,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF17",
-    "algorithmName": "AStar",
+    "conf": "CONF17",
+    "algorithm": "AStar",
     "exploredNodeCount": 18,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF17",
-    "algorithmName": "BDS",
+    "conf": "CONF17",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF18",
-    "algorithmName": "BFS",
+    "conf": "CONF18",
+    "algorithm": "BFS",
     "exploredNodeCount": 55,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF18",
-    "algorithmName": "DFS",
+    "conf": "CONF18",
+    "algorithm": "DFS",
     "exploredNodeCount": 72,
     "pathCost": 43.0
   },
   {
-    "confName": "CONF18",
-    "algorithmName": "BestF",
+    "conf": "CONF18",
+    "algorithm": "BestF",
     "exploredNodeCount": 14,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF18",
-    "algorithmName": "AStar",
+    "conf": "CONF18",
+    "algorithm": "AStar",
     "exploredNodeCount": 28,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF18",
-    "algorithmName": "BDS",
+    "conf": "CONF18",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 11.0
   },
   {
-    "confName": "CONF19",
-    "algorithmName": "BFS",
+    "conf": "CONF19",
+    "algorithm": "BFS",
     "exploredNodeCount": 51,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF19",
-    "algorithmName": "DFS",
+    "conf": "CONF19",
+    "algorithm": "DFS",
     "exploredNodeCount": 71,
     "pathCost": 18.0
   },
   {
-    "confName": "CONF19",
-    "algorithmName": "BestF",
+    "conf": "CONF19",
+    "algorithm": "BestF",
     "exploredNodeCount": 9,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF19",
-    "algorithmName": "AStar",
+    "conf": "CONF19",
+    "algorithm": "AStar",
     "exploredNodeCount": 15,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF19",
-    "algorithmName": "BDS",
+    "conf": "CONF19",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 8.0
   },
   {
-    "confName": "CONF20",
-    "algorithmName": "BFS",
+    "conf": "CONF20",
+    "algorithm": "BFS",
     "exploredNodeCount": 50,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF20",
-    "algorithmName": "DFS",
+    "conf": "CONF20",
+    "algorithm": "DFS",
     "exploredNodeCount": 20,
     "pathCost": 18.0
   },
   {
-    "confName": "CONF20",
-    "algorithmName": "BestF",
+    "conf": "CONF20",
+    "algorithm": "BestF",
     "exploredNodeCount": 22,
     "pathCost": 20.0
   },
   {
-    "confName": "CONF20",
-    "algorithmName": "AStar",
+    "conf": "CONF20",
+    "algorithm": "AStar",
     "exploredNodeCount": 36,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF20",
-    "algorithmName": "BDS",
+    "conf": "CONF20",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF21",
-    "algorithmName": "BFS",
+    "conf": "CONF21",
+    "algorithm": "BFS",
     "exploredNodeCount": 52,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF21",
-    "algorithmName": "DFS",
+    "conf": "CONF21",
+    "algorithm": "DFS",
     "exploredNodeCount": 21,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF21",
-    "algorithmName": "BestF",
+    "conf": "CONF21",
+    "algorithm": "BestF",
     "exploredNodeCount": 21,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF21",
-    "algorithmName": "AStar",
+    "conf": "CONF21",
+    "algorithm": "AStar",
     "exploredNodeCount": 33,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF21",
-    "algorithmName": "BDS",
+    "conf": "CONF21",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF22",
-    "algorithmName": "BFS",
+    "conf": "CONF22",
+    "algorithm": "BFS",
     "exploredNodeCount": 42,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF22",
-    "algorithmName": "DFS",
+    "conf": "CONF22",
+    "algorithm": "DFS",
     "exploredNodeCount": 21,
     "pathCost": 18.0
   },
   {
-    "confName": "CONF22",
-    "algorithmName": "BestF",
+    "conf": "CONF22",
+    "algorithm": "BestF",
     "exploredNodeCount": 28,
     "pathCost": 22.0
   },
   {
-    "confName": "CONF22",
-    "algorithmName": "AStar",
+    "conf": "CONF22",
+    "algorithm": "AStar",
     "exploredNodeCount": 35,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF22",
-    "algorithmName": "BDS",
+    "conf": "CONF22",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 16.0
   },
   {
-    "confName": "CONF23",
-    "algorithmName": "BFS",
+    "conf": "CONF23",
+    "algorithm": "BFS",
     "exploredNodeCount": 49,
     "pathCost": 15.0
   },
   {
-    "confName": "CONF23",
-    "algorithmName": "DFS",
+    "conf": "CONF23",
+    "algorithm": "DFS",
     "exploredNodeCount": 18,
     "pathCost": 15.0
   },
   {
-    "confName": "CONF23",
-    "algorithmName": "BestF",
+    "conf": "CONF23",
+    "algorithm": "BestF",
     "exploredNodeCount": 22,
     "pathCost": 21.0
   },
   {
-    "confName": "CONF23",
-    "algorithmName": "AStar",
+    "conf": "CONF23",
+    "algorithm": "AStar",
     "exploredNodeCount": 33,
     "pathCost": 15.0
   },
   {
-    "confName": "CONF23",
-    "algorithmName": "BDS",
+    "conf": "CONF23",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 15.0
   },
   {
-    "confName": "CONF24",
-    "algorithmName": "BFS",
+    "conf": "CONF24",
+    "algorithm": "BFS",
     "exploredNodeCount": 46,
     "pathCost": 17.0
   },
   {
-    "confName": "CONF24",
-    "algorithmName": "DFS",
+    "conf": "CONF24",
+    "algorithm": "DFS",
     "exploredNodeCount": 48,
     "pathCost": 21.0
   },
   {
-    "confName": "CONF24",
-    "algorithmName": "BestF",
+    "conf": "CONF24",
+    "algorithm": "BestF",
     "exploredNodeCount": 23,
     "pathCost": 21.0
   },
   {
-    "confName": "CONF24",
-    "algorithmName": "AStar",
+    "conf": "CONF24",
+    "algorithm": "AStar",
     "exploredNodeCount": 37,
     "pathCost": 19.0
   },
   {
-    "confName": "CONF24",
-    "algorithmName": "BDS",
+    "conf": "CONF24",
+    "algorithm": "BDS",
     "exploredNodeCount": 0,
     "pathCost": 17.0
   }

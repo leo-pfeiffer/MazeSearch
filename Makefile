@@ -27,6 +27,11 @@ test:
 stacscheck:
 	@stacscheck $(STACSCHECK)
 
+.PHONY: evaluation
+# Run the evaluation (creates plots)
+evaluation:
+	@python3 evaluation/evaluation.py
+
 
 .PHONY: help
 # Found here: https://stackoverflow.com/a/35730928/12168211
