@@ -6,7 +6,7 @@
  * @author at258, 190026921
  *
  * run with 
- * java A1main <Algo> <ConfID>
+ * java A1main <Algo> <ConfID> [<2nd Algo>]
  *
  */
 
@@ -30,7 +30,7 @@ public class A1main {
 
     private static void exitWithException() {
         System.out.println("Invalid arguments.");
-        System.out.println("Usage: java A1main <Algo> <ConfID>");
+        System.out.println("Usage: java A1main <Algo> <ConfID> [<2nd Algo>]");
         System.exit(1);
     }
 
@@ -39,7 +39,13 @@ public class A1main {
         Map map = conf.getMap();
         Coord start = conf.getS();
         Coord goal = conf.getG();
-        return new SearchFactory().makeSearch(args[0], map, start, goal);
+        if (args.length == 2) {
+            return new SearchFactory().makeSearch(args[0], map, start, goal);
+        } else if (args.length == 3) {
+            return new SearchFactory().makeSearch(args[0], args[2], map, start, goal);
+        } else {
+            throw new IllegalArgumentException("Invalid arguments.");
+        }
     }
 
     private static void printMap(Map m, Coord init, Coord goal) {
