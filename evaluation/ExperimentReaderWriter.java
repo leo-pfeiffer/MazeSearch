@@ -15,9 +15,24 @@ public class ExperimentReaderWriter {
     public static void main(String[] args) {
         ArrayList<String> algorithms = readJSON(EVALUATION_FOLDER + "configurations.json");
         Conf[] confArray = getEvalConfArray();
+        regularTest(algorithms, confArray);
+        bidirectionalTest(algorithms, confArray);
+    }
+
+    public static void regularTest(ArrayList<String> algorithms, Conf[] confArray) {
         try {
             ArrayList<Experiment> results = runExperiments(confArray, algorithms);
             writeJSON(OUT_FOLDER + "results.json", results);
+        } catch (SearchFactory.InvalidSearch e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    public static void bidirectionalTest(ArrayList<String> algorithms, Conf[] confArray) {
+        try {
+            ArrayList<Experiment> results = runBDSExperiments(confArray, algorithms);
+            writeJSON(OUT_FOLDER + "bds-results.json", results);
         } catch (SearchFactory.InvalidSearch e) {
             e.printStackTrace();
             System.exit(1);
@@ -34,6 +49,23 @@ public class ExperimentReaderWriter {
                 Search search = SearchFactory.makeSearch(algorithm, conf.getMap(), conf.getS(), conf.getG());
                 search.runSearch();
                 Experiment e = makeExperiment(confName, algorithm, search);
+                experiments.add(e);
+            }
+        }
+        return experiments;
+    }
+
+    public static ArrayList<Experiment> runBDSExperiments(Conf[] confArray, ArrayList<String> algorithms) throws SearchFactory.InvalidSearch {
+        String confName;
+        ArrayList<Experiment> experiments = new ArrayList<>();
+
+        for (Conf conf : confArray) {
+            confName = conf.name();
+            for (String algorithm : algorithms) {
+                if (algorithm.equals("BDS")) continue;
+                Search search = SearchFactory.makeSearch("BDS", algorithm, conf.getMap(), conf.getS(), conf.getG());
+                search.runSearch();
+                Experiment e = makeExperiment(confName, "BDS-" + algorithm, search);
                 experiments.add(e);
             }
         }

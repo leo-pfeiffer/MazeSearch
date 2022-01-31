@@ -1,0 +1,594 @@
+[
+  {
+    "conf": "CONF0",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 22,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF0",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 14,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF0",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 20,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF0",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 20,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF1",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 22,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF1",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 16,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF1",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 24,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF1",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 24,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF2",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 22,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF2",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 16,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF2",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 26,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF2",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 26,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF3",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 24,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF3",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 22,
+    "pathCost": 14.0
+  },
+  {
+    "conf": "CONF3",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 24,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF3",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 24,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF4",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 22,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF4",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 18,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF4",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 20,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF4",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 20,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF5",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 18,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF5",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 19,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF5",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 20,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF5",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 20,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF6",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 18,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF6",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 12,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF6",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 18,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF6",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 18,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF7",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF7",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 19,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF7",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF7",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF8",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF8",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 10,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF8",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF8",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 14,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF9",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 12,
+    "pathCost": 7.0
+  },
+  {
+    "conf": "CONF9",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 18,
+    "pathCost": 13.0
+  },
+  {
+    "conf": "CONF9",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 12,
+    "pathCost": 7.0
+  },
+  {
+    "conf": "CONF9",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 12,
+    "pathCost": 7.0
+  },
+  {
+    "conf": "CONF10",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF10",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF10",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF10",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF11",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF11",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF11",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF11",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 2
+  },
+  {
+    "conf": "CONF12",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 8,
+    "pathCost": 6.0
+  },
+  {
+    "conf": "CONF12",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 8,
+    "pathCost": 6.0
+  },
+  {
+    "conf": "CONF12",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 8,
+    "pathCost": 6.0
+  },
+  {
+    "conf": "CONF12",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 8,
+    "pathCost": 6.0
+  },
+  {
+    "conf": "CONF13",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 22,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF13",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 18,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF13",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 22,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF13",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 22,
+    "pathCost": 12.0
+  },
+  {
+    "conf": "CONF14",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 18,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF14",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 16,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF14",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 18,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF14",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 18,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF15",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 72,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF15",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 28,
+    "pathCost": 20.0
+  },
+  {
+    "conf": "CONF15",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 42,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF15",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 42,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF16",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 8,
+    "pathCost": 5.0
+  },
+  {
+    "conf": "CONF16",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 12,
+    "pathCost": 5.0
+  },
+  {
+    "conf": "CONF16",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 10,
+    "pathCost": 7.0
+  },
+  {
+    "conf": "CONF16",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 10,
+    "pathCost": 7.0
+  },
+  {
+    "conf": "CONF17",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 26,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF17",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 34,
+    "pathCost": 21.0
+  },
+  {
+    "conf": "CONF17",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 34,
+    "pathCost": 13.0
+  },
+  {
+    "conf": "CONF17",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 34,
+    "pathCost": 13.0
+  },
+  {
+    "conf": "CONF18",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 32,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF18",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 16,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF18",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 24,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF18",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 24,
+    "pathCost": 11.0
+  },
+  {
+    "conf": "CONF19",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 18,
+    "pathCost": 8.0
+  },
+  {
+    "conf": "CONF19",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 28,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF19",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 24,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF19",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 24,
+    "pathCost": 10.0
+  },
+  {
+    "conf": "CONF20",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 38,
+    "pathCost": 16.0
+  },
+  {
+    "conf": "CONF20",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 22,
+    "pathCost": 16.0
+  },
+  {
+    "conf": "CONF20",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 52,
+    "pathCost": 16.0
+  },
+  {
+    "conf": "CONF20",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 52,
+    "pathCost": 16.0
+  },
+  {
+    "conf": "CONF21",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 46,
+    "pathCost": 17.0
+  },
+  {
+    "conf": "CONF21",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 30,
+    "pathCost": 19.0
+  },
+  {
+    "conf": "CONF21",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 44,
+    "pathCost": 19.0
+  },
+  {
+    "conf": "CONF21",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 44,
+    "pathCost": 19.0
+  },
+  {
+    "conf": "CONF22",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 42,
+    "pathCost": 16.0
+  },
+  {
+    "conf": "CONF22",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 37,
+    "pathCost": 22.0
+  },
+  {
+    "conf": "CONF22",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 51,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF22",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 51,
+    "pathCost": 18.0
+  },
+  {
+    "conf": "CONF23",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 36,
+    "pathCost": 15.0
+  },
+  {
+    "conf": "CONF23",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 22,
+    "pathCost": 15.0
+  },
+  {
+    "conf": "CONF23",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 44,
+    "pathCost": 21.0
+  },
+  {
+    "conf": "CONF23",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 44,
+    "pathCost": 21.0
+  },
+  {
+    "conf": "CONF24",
+    "algorithm": "BDS-BFS",
+    "exploredNodeCount": 42,
+    "pathCost": 17.0
+  },
+  {
+    "conf": "CONF24",
+    "algorithm": "BDS-DFS",
+    "exploredNodeCount": 28,
+    "pathCost": 17.0
+  },
+  {
+    "conf": "CONF24",
+    "algorithm": "BDS-BestF",
+    "exploredNodeCount": 42,
+    "pathCost": 17.0
+  },
+  {
+    "conf": "CONF24",
+    "algorithm": "BDS-AStar",
+    "exploredNodeCount": 42,
+    "pathCost": 17.0
+  }
+]
