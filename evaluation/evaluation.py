@@ -1,6 +1,5 @@
-# ANALYSIS MODULE
-# Running this file will grab the JSON file
-# containing the analysis results and create the
+# EVALUATION
+# Running this file will grab the JSON file containing the experiment results and create the
 # plots and tables in the evaluation/out folder.
 
 # built-in imports
@@ -48,7 +47,6 @@ def set_plt_params():
     plt.rcParams['ytick.major.size'] = major
     plt.rcParams['xtick.direction'] = 'in'
     plt.rcParams['ytick.direction'] = 'in'
-    plt.rcParams['axes.prop_cycle'] = cycler(color=["r", "b", "g", "m", "c", "y", "k"])
 
 def create_plot(df: pd.DataFrame, file_name: str, title: str, ycol: str):
 
