@@ -460,8 +460,8 @@
   {
     "conf": "CONF15",
     "algorithm": "AStar",
-    "exploredNodeCount": 51,
-    "pathCost": 20.0
+    "exploredNodeCount": 45,
+    "pathCost": 18.0
   },
   {
     "conf": "CONF15",
@@ -520,7 +520,7 @@
   {
     "conf": "CONF17",
     "algorithm": "AStar",
-    "exploredNodeCount": 18,
+    "exploredNodeCount": 19,
     "pathCost": 11.0
   },
   {
@@ -550,7 +550,7 @@
   {
     "conf": "CONF18",
     "algorithm": "AStar",
-    "exploredNodeCount": 28,
+    "exploredNodeCount": 29,
     "pathCost": 11.0
   },
   {
@@ -730,8 +730,8 @@
   {
     "conf": "CONF24",
     "algorithm": "AStar",
-    "exploredNodeCount": 37,
-    "pathCost": 19.0
+    "exploredNodeCount": 36,
+    "pathCost": 17.0
   },
   {
     "conf": "CONF24",

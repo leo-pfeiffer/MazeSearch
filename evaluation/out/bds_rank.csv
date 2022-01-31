@@ -1,7 +1,7 @@
 ,rank_cost,rank_cost,rank_count,rank_count
 ,mean,median,mean,median
 algorithm,,,,
-BDS-AStar,1.434782608695652,1.0,2.04,2.0
+BDS-AStar,1.4782608695652173,1.0,2.04,2.0
 BDS-BFS,1.0,1.0,1.84,2.0
-BDS-BestF,1.434782608695652,1.0,2.04,2.0
+BDS-BestF,1.4782608695652173,1.0,2.04,2.0
 BDS-DFS,1.6956521739130435,2.0,1.32,1.0

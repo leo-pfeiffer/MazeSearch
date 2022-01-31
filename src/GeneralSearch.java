@@ -71,6 +71,7 @@ public abstract class GeneralSearch extends Search {
             Node newNode = new Node(node, successorState, node.getCost() + 1);
             addToSuccessors(newNode, newNodes);
         }
+        // convert arraylist to array
         Node[] newNodesArray = new Node[newNodes.size()];
         newNodes.toArray(newNodesArray);
         return newNodesArray;

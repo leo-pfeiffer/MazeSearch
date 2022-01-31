@@ -38,7 +38,7 @@ public class AStarSearch extends GeneralSearch {
      * */
     @Override
     protected void addToSuccessors(Node node, ArrayList<Node> newNodes) {
-        if (!explored.contains(node)) {
+        if (!explored.contains(node) && !frontier.contains(node)) {
             newNodes.add(node);
         } else {
             // need a new frontier to replace the old one with
