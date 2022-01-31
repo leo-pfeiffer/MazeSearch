@@ -1,7 +1,7 @@
 # ANALYSIS MODULE
 # Running this file will grab the JSON file
 # containing the analysis results and create the
-# plots and tables in the src/evaluation/resources/out folder.
+# plots and tables in the evaluation/out folder.
 
 # built-in imports
 import json
