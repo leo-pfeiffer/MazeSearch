@@ -24,6 +24,19 @@ public class PriorityQueueFrontier extends Frontier {
         this.uniqueNodes = uniqueNodes;
     }
 
+    public void print() {
+        Iterator<Node> it = iterator();
+        System.out.print("[");
+        while (it.hasNext()) {
+            Node next = it.next();
+            System.out.print(next + ":" + next.getFCost());
+            if (it.hasNext()) {
+                System.out.print(",");
+            }
+        }
+        System.out.println("]");
+    }
+
     @Override
     public void insert(Node node) {
         // only add unique nodes
