@@ -21,7 +21,8 @@ except ImportError:
 
 # file and path constants
 OUT_FOLDER = 'evaluation/out/'
-FILE = 'results.json'
+REG_FILE = 'results.json'
+BDS_FILE = 'bds-results.json'
 METRICS = ['exploredNodeCount', 'pathCost']
 
 def load(path):
@@ -64,17 +65,27 @@ def create_plot(df: pd.DataFrame, file_name: str, title: str, ycol: str):
     plt.xticks(rotation = 90)
     plt.savefig(f"{OUT_FOLDER}{file_name}.png", dpi=300, pad_inches=.15, bbox_inches = 'tight')
 
-if __name__ == '__main__':
-    set_plt_params()
-    data = load(OUT_FOLDER + FILE)
-    df = pd.DataFrame(data)
-
-    # Node Count
+def make_node_count_plot(df, prefix):
     df_node_count = df.pivot(index='conf', columns='algorithm', values='exploredNodeCount')
     df_node_count = df_node_count.reindex(["CONF" + str(i) for i in range(25)])
-    create_plot(df_node_count, 'explored_nodes', 'Number of explored nodes', 'Configuration')
+    create_plot(df_node_count, prefix + '_explored_nodes', 'Number of explored nodes', 'Configuration')
 
-    # Path
+def make_path_cost_plot(df, prefix):
     df_cost = df.pivot(index='conf', columns='algorithm', values='pathCost')
     df_cost = df_cost.reindex(["CONF" + str(i) for i in range(25)])
-    create_plot(df_cost, 'path_cost', 'Path cost', 'Configuration')
+    create_plot(df_cost, prefix + '_path_cost', 'Path cost', 'Configuration')
+
+if __name__ == '__main__':
+    set_plt_params()
+    data_reg = load(OUT_FOLDER + REG_FILE)
+    data_bds = load(OUT_FOLDER + BDS_FILE)
+    df_reg = pd.DataFrame(data_reg)
+    df_bds = pd.DataFrame(data_bds)
+
+    # Node Count
+    make_node_count_plot(df_reg, 'reg')
+    make_node_count_plot(df_bds, 'bds')
+
+    # Path
+    make_path_cost_plot(df_reg, 'reg')
+    make_path_cost_plot(df_bds, 'bds')
