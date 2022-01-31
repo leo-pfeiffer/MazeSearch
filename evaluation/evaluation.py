@@ -75,6 +75,12 @@ def make_path_cost_plot(df, prefix):
     df_cost = df_cost.reindex(["CONF" + str(i) for i in range(25)])
     create_plot(df_cost, prefix + '_path_cost', 'Path cost', 'Configuration')
 
+def rank(df):
+    df["rank_cost"] = df.groupby("conf")['pathCost'].rank("dense", ascending=True)
+    df["rank_count"] = df.groupby("conf")['exploredNodeCount'].rank("dense", ascending=True)
+    return df.groupby("algorithm")[['rank_cost', 'rank_count']].agg(['mean', 'median'])
+
+
 if __name__ == '__main__':
     set_plt_params()
     data_reg = load(OUT_FOLDER + REG_FILE)
@@ -89,3 +95,15 @@ if __name__ == '__main__':
     # Path
     make_path_cost_plot(df_reg, 'reg')
     make_path_cost_plot(df_bds, 'bds')
+
+    print("=" * 21 + "RANKING" + "=" * 21)
+
+    agg_reg = rank(df_reg)
+    agg_reg.to_csv(OUT_FOLDER + 'reg_rank.csv')
+    print(agg_reg)
+    print("=" * 50)
+
+    agg_bds = rank(df_bds)
+    agg_bds.to_csv(OUT_FOLDER + 'bds_rank.csv')
+    print(agg_bds)
+    print("=" * 50)
