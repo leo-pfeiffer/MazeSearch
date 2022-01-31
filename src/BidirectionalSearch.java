@@ -142,4 +142,11 @@ public class BidirectionalSearch extends GeneralSearch {
         fNode = new Node(fNode, bNode.getState(), fNode.getCost() + 1);
         return fNode;
     }
+
+    @Override
+    public int getExploredNodeCount() {
+        Set<State> exploredUnion = fSearch.explored.toSet();
+        exploredUnion.addAll(bSearch.explored.toSet());
+        return exploredUnion.size();
+    }
 }

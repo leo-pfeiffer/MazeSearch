@@ -33,4 +33,8 @@ public class ExploredSet {
     public int size() {
         return exploredStates.size();
     }
+
+    public HashSet<State> toSet() {
+        return exploredStates;
+    }
 }

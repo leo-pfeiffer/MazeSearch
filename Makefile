@@ -1,20 +1,22 @@
 SRC_FILES := $(shell find ./src/* -name '*.java')
 TEST_FILES := $(shell find ./test/* -name '*java')
+EVAL_FILES := $(shell find ./evaluation/* -name '*java')
 LIB := ./lib/*
-CLASSPATH := $(LIB):src:test
+CLASSPATH := $(LIB):src:test:evaluation
 STACSCHECK := /cs/studres/CS5011/Practicals/A1/Tests
 
 
 .PHONY: compile
 # Compile all java files
 compile:
-	@javac -cp $(LIB):. $(SRC_FILES) $(TEST_FILES)
+	@javac -cp $(LIB):. $(SRC_FILES) $(TEST_FILES) $(EVAL_FILES)
 
 .PHONY: clean
 # Remove java class files
 clean:
 	find ./src/* -name '*.class' -delete
 	find ./test/* -name '*.class' -delete
+	find ./evaluation/* -name '*.class' -delete
 
 
 .PHONY: test
@@ -28,8 +30,9 @@ stacscheck:
 	@stacscheck $(STACSCHECK)
 
 .PHONY: evaluation
-# Run the evaluation (creates plots)
+# Run the evaluation (run experiments, create plots)
 evaluation:
+	@java -cp $(CLASSPATH):. ExperimentReaderWriter
 	@python3 evaluation/evaluation.py
 
 
