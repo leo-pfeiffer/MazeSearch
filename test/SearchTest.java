@@ -109,4 +109,80 @@ public class SearchTest {
         }
     }
 
+    @Test
+    public void testGoalTest() {
+        Conf conf = Conf.valueOf("JCONF01");
+
+        Search search = new DepthFirstSearch(conf.getMap(), conf.getS(), conf.getG());
+
+        State notGoalState = new State(new Coord(0, conf.getG().getCol() + 1), conf.getMap());
+        State goalState = new State(conf.getG(), conf.getMap());
+        Node notGoal = new Node(null, notGoalState, 0);
+        Node goal = new Node(null, goalState, 0);
+
+        assertTrue(search.goalTest(goal));
+        assertFalse(search.goalTest(notGoal));
+    }
+
+    @Test
+    public void testSolutionPath() {
+        Conf conf = Conf.valueOf("JCONF00");
+        Search search = new BreadthFirstSearch(conf.getMap(), conf.getS(), conf.getG());
+        search.runSearch();
+        String expected = "(1,1)(1,2)(1,3)(1,4)(1,5)(2,5)(2,4)(3,4)";
+        assertEquals(expected, search.solutionPath());
+    }
+
+    /**
+     * Tests if insert all works with a PriorityQueueFrontier if the path cost is 0.
+     * */
+    @Test
+    public void testAStarInsertAll1() {
+        Map map = Conf.valueOf("JCONF01").getMap();
+
+        State s1 = new State(new Coord(0, 3), map); // hCost = 3
+        State s2 = new State(new Coord(3, 3), map); // hCost = 6
+        State s3 = new State(new Coord(3, 0), map); // hCost = 5
+
+        Node n1 = new Node(null, s1, 0);
+        Node n2 = new Node(null, s2, 0);
+        Node n3 = new Node(null, s3, 0);
+
+        Node[] nodeArray = {n1, n2, n3};
+
+        AStarSearch search = new AStarSearch(map, new Coord(0, 0), new Coord(0, 0));
+        search.insertAll(nodeArray);
+
+        // check if the order is correct
+        assertEquals(n1, search.getFrontier().remove());
+        assertEquals(n3, search.getFrontier().remove());
+        assertEquals(n2, search.getFrontier().remove());
+    }
+
+    /**
+     * Tests if insert all works with a PriorityQueueFrontier if we have path costs.
+     * */
+    @Test
+    public void testAStarInsertAll2() {
+        Map map = Conf.valueOf("JCONF01").getMap();
+
+        State s1 = new State(new Coord(0, 3), map); // hCost = 3
+        State s2 = new State(new Coord(3, 3), map); // hCost = 6
+        State s3 = new State(new Coord(3, 0), map); // hCost = 5
+
+        Node n1 = new Node(null, s1, 100);
+        Node n2 = new Node(null, s2, 200);
+        Node n3 = new Node(null, s3, 300);
+
+        Node[] nodeArray = {n1, n2, n3};
+
+        AStarSearch search = new AStarSearch(map, new Coord(0, 0), new Coord(0, 0));
+        search.insertAll(nodeArray);
+
+        // check if the order is correct
+        assertEquals(n1, search.getFrontier().remove());
+        assertEquals(n2, search.getFrontier().remove());
+        assertEquals(n3, search.getFrontier().remove());
+    }
+
 }

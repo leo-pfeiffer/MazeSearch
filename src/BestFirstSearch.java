@@ -1,4 +1,4 @@
-public class BestFirstSearch extends GeneralSearch {
+public class BestFirstSearch extends InformedSearch {
 
     public BestFirstSearch(Map map, Coord start, Coord goal) {
         super(map, start, goal);
@@ -8,20 +8,9 @@ public class BestFirstSearch extends GeneralSearch {
     }
 
     /**
-     * Overrides the method in GeneralSearch since we also need to calculate the hCost and fCost.
-     * */
-    @Override
-    public void insertAll(Node[] nodes) {
-        for (Node node : nodes) {
-            calculateCost(node);
-            frontier.insert(node);
-        }
-    }
-
-    /**
      * Calculate the hCost and fCost of the node.
      * */
-    private void calculateCost(Node node) {
+    protected void calculateCost(Node node) {
         Coord coord = node.getState().getCoord();
         double hCost = coord.getManhattanDistance(goal);
         node.setHCost(hCost);

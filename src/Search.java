@@ -81,4 +81,8 @@ public abstract class Search {
     public int getExploredNodeCount() {
         return explored.size();
     }
+
+    public Frontier getFrontier() {
+        return frontier;
+    }
 }

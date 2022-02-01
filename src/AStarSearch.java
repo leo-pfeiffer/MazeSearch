@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class AStarSearch extends GeneralSearch {
+public class AStarSearch extends InformedSearch {
 
     public AStarSearch(Map map, Coord start, Coord goal) {
         super(map, start, goal);
@@ -11,20 +11,9 @@ public class AStarSearch extends GeneralSearch {
     }
 
     /**
-     * Overrides the method in GeneralSearch since we also need to calculate the hCost and fCost.
-     * */
-    @Override
-    public void insertAll(Node[] nodes) {
-        for (Node node : nodes) {
-            calculateCost(node);
-            frontier.insert(node);
-        }
-    }
-
-    /**
      * Calculate the hCost and fCost of the node.
      * */
-    private void calculateCost(Node node) {
+    protected void calculateCost(Node node) {
         Coord coord = node.getState().getCoord();
         double hCost = coord.getManhattanDistance(goal);
         double fCost = hCost + node.getCost();
