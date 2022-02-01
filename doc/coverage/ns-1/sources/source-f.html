@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Map</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Map (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Map</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.8%
+  </span>
+  <span class="absValue">
+    (15/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/********************Starter Code
+<i class="no-highlight">2</i>&nbsp; * 
+<i class="no-highlight">3</i>&nbsp; * This class contains the maps to be used for evaluation 
+<i class="no-highlight">4</i>&nbsp; * 
+<i class="no-highlight">5</i>&nbsp; * @author at258
+<i class="no-highlight">6</i>&nbsp; *
+<i class="no-highlight">7</i>&nbsp; */
+<i class="no-highlight">8</i>&nbsp;
+<b class="fc"><i class="no-highlight">9</i>&nbsp;public enum Map {</b>
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;
+<i class="no-highlight">12</i>&nbsp;	//************************TEST MAPS as discussed in lectures ******************** 
+<i class="no-highlight">13</i>&nbsp;
+<b class="fc"><i class="no-highlight">14</i>&nbsp;	JMAP00(new int [][] { //JMAP00 is the map in the spec  </b>
+<i class="no-highlight">15</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">16</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">17</i>&nbsp;		{0,0,1,1,0,0},
+<i class="no-highlight">18</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">19</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">20</i>&nbsp;		{0,0,0,0,0,0}
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;	}),
+<i class="no-highlight">23</i>&nbsp;
+<i class="no-highlight">24</i>&nbsp;
+<b class="fc"><i class="no-highlight">25</i>&nbsp;	JMAP01(new int [][] { //JMAP01 is used in the given tests</b>
+<i class="no-highlight">26</i>&nbsp;		{0,0,0},
+<i class="no-highlight">27</i>&nbsp;		{0,0,0},
+<i class="no-highlight">28</i>&nbsp;		{0,0,0}
+<i class="no-highlight">29</i>&nbsp;	}),
+<i class="no-highlight">30</i>&nbsp;	
+<i class="no-highlight">31</i>&nbsp;
+<b class="fc"><i class="no-highlight">32</i>&nbsp;	JMAP02(new int [][] { //JMAP03 is used in the given tests</b>
+<i class="no-highlight">33</i>&nbsp;		{0,0,0},
+<i class="no-highlight">34</i>&nbsp;		{0,0,0},
+<i class="no-highlight">35</i>&nbsp;		{0,1,0}
+<i class="no-highlight">36</i>&nbsp;	}),
+<i class="no-highlight">37</i>&nbsp;
+<i class="no-highlight">38</i>&nbsp;	//************************MAPS for evaluation ********************
+<b class="fc"><i class="no-highlight">39</i>&nbsp;	MAP0(new int [][] {</b>
+<i class="no-highlight">40</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">41</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">42</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">43</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">44</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">45</i>&nbsp;		{0,0,0,0,0,0}
+<i class="no-highlight">46</i>&nbsp;	}),
+<b class="fc"><i class="no-highlight">47</i>&nbsp;	MAP1(new int [][] {</b>
+<i class="no-highlight">48</i>&nbsp;		{0,0,0,0,0},
+<i class="no-highlight">49</i>&nbsp;		{0,0,1,0,0},
+<i class="no-highlight">50</i>&nbsp;		{0,0,1,0,0},
+<i class="no-highlight">51</i>&nbsp;		{0,0,1,0,0},
+<i class="no-highlight">52</i>&nbsp;		{0,0,0,0,0},
+<i class="no-highlight">53</i>&nbsp;	}),
+<b class="fc"><i class="no-highlight">54</i>&nbsp;	MAP2(new int [][] {</b>
+<i class="no-highlight">55</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">56</i>&nbsp;		{0,0,1,1,0,0},
+<i class="no-highlight">57</i>&nbsp;		{0,0,1,0,1,0},
+<i class="no-highlight">58</i>&nbsp;		{0,0,1,1,1,0},
+<i class="no-highlight">59</i>&nbsp;		{0,0,0,0,0,0},
+<i class="no-highlight">60</i>&nbsp;		{0,0,1,1,1,0}
+<i class="no-highlight">61</i>&nbsp;	}),
+<b class="fc"><i class="no-highlight">62</i>&nbsp;	MAP3(new int [][] {</b>
+<i class="no-highlight">63</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">64</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">65</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">66</i>&nbsp;		{0,0,0,0,0,1,0,0,1,0},
+<i class="no-highlight">67</i>&nbsp;		{0,0,0,1,0,0,0,0,0,0},
+<i class="no-highlight">68</i>&nbsp;		{0,0,0,0,0,0,1,1,0,0},
+<i class="no-highlight">69</i>&nbsp;		{0,0,1,1,0,1,0,0,0,0},
+<i class="no-highlight">70</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">71</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">72</i>&nbsp;		{0,0,0,0,0,0,0,0,0,0},
+<i class="no-highlight">73</i>&nbsp;
+<i class="no-highlight">74</i>&nbsp;	}),
+<b class="fc"><i class="no-highlight">75</i>&nbsp;	MAP4(new int [][] {</b>
+<i class="no-highlight">76</i>&nbsp;		{0,0,0,0,0,0,0,0},
+<i class="no-highlight">77</i>&nbsp;		{0,0,0,0,0,1,0,0},
+<i class="no-highlight">78</i>&nbsp;		{1,0,0,1,1,0,0,0},
+<i class="no-highlight">79</i>&nbsp;		{0,0,0,1,0,0,0,0},
+<i class="no-highlight">80</i>&nbsp;		{0,0,1,0,0,0,1,0},
+<i class="no-highlight">81</i>&nbsp;		{0,0,1,1,0,0,0,0},
+<i class="no-highlight">82</i>&nbsp;		{0,0,1,1,0,0,0,0},
+<i class="no-highlight">83</i>&nbsp;		{0,0,0,0,0,0,0,0}
+<i class="no-highlight">84</i>&nbsp;	})
+<i class="no-highlight">85</i>&nbsp;	;
+<i class="no-highlight">86</i>&nbsp;
+<i class="no-highlight">87</i>&nbsp;	public final int[][] map; 
+<i class="no-highlight">88</i>&nbsp;
+<b class="fc"><i class="no-highlight">89</i>&nbsp;	Map(int[][] map){</b>
+<b class="fc"><i class="no-highlight">90</i>&nbsp;		this.map=map;</b>
+<i class="no-highlight">91</i>&nbsp;
+<i class="no-highlight">92</i>&nbsp;	}
+<i class="no-highlight">93</i>&nbsp;
+<i class="no-highlight">94</i>&nbsp;	public int[][] getMap() {
+<b class="nc"><i class="no-highlight">95</i>&nbsp;		return map;</b>
+<i class="no-highlight">96</i>&nbsp;	}
+<i class="no-highlight">97</i>&nbsp;
+<i class="no-highlight">98</i>&nbsp;	public boolean isOnMap(Coord coord) {
+<b class="fc"><i class="no-highlight">99</i>&nbsp;		boolean vertical = coord.getRow() &gt;= 0 &amp;&amp; coord.getRow() &lt; map.length;</b>
+<b class="fc"><i class="no-highlight">100</i>&nbsp;		boolean horizontal = coord.getCol() &gt;= 0 &amp;&amp; coord.getCol() &lt; map[0].length;</b>
+<b class="fc"><i class="no-highlight">101</i>&nbsp;		return vertical &amp;&amp; horizontal;</b>
+<i class="no-highlight">102</i>&nbsp;	}
+<i class="no-highlight">103</i>&nbsp;
+<i class="no-highlight">104</i>&nbsp;	public boolean isIsland(Coord coord) {
+<b class="fc"><i class="no-highlight">105</i>&nbsp;		return map[coord.getRow()][coord.getCol()] == 1;</b>
+<i class="no-highlight">106</i>&nbsp;	}
+<i class="no-highlight">107</i>&nbsp;
+<i class="no-highlight">108</i>&nbsp;
+<i class="no-highlight">109</i>&nbsp;
+<i class="no-highlight">110</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-02-01 19:37</div>
+</div>
+</body>
+</html>
