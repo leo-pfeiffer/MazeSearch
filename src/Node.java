@@ -65,9 +65,13 @@ public class Node {
         return state.getCoord().toString();
     }
 
+
+    /**
+     * Node equality is established purely on the basis of the states, NOT the parent.
+     *
+     * */
     @Override
     public boolean equals(Object o) {
-        // todo check if this is correct
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -75,34 +79,13 @@ public class Node {
         return state.equals(node.getState());
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Node node = (Node) o;
-//        if (parent == null && node.parent != null) return false;
-//        if (parent != null && !parent.equals(node.parent)) return false;
-//        if (!state.equals(node.state)) return false;
-//        if (depth != node.depth) return false;
-//        return cost == node.cost;
-//    }
 
     @Override
     public int hashCode() {
-        // todo check if this is correct
         int result = state.hashCode();
         result = 31 * result;
         return result;
     }
-//    @Override
-//    public int hashCode() {
-//        int result = parent != null ? parent.hashCode() : 0;
-//        result = 31 * result + state.hashCode();
-//        result = 31 * result + depth;
-//        result = (int) (31 * result + cost);
-//        return result;
-//    }
 
     public double getHCost() {
         return hCost;
