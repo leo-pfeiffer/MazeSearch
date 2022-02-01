@@ -1,113 +1,149 @@
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FrontierTest {
+
+    Map map = Conf.valueOf("JCONF01").getMap();
+
+    State s1 = new State(new Coord(0, 0), map);
+    State s2 = new State(new Coord(0, 1), map);
+    State s3 = new State(new Coord(0, 2), map);
+    State s4 = new State(new Coord(1, 0), map);
+
+    Node n1 = new Node(null, s1, 0);
+    Node n2 = new Node(null, s2, 0);
+    Node n3 = new Node(null, s3, 0);
+    Node n4 = new Node(null, s4, 0);
+
+    PriorityQueueFrontier PQF = new PriorityQueueFrontier();
+    StackFrontier SF = new StackFrontier();
+    QueueFrontier QF = new QueueFrontier();
+
+    @Before
+    public void setUp() {
+        n1.setFCost(1);
+        n2.setFCost(2);
+        n3.setFCost(3);
+        n4.setFCost(4);
+    }
+
     @Test
     public void testQueueFrontier() {
-        QueueFrontier frontier = new QueueFrontier();
-
-        Map map = Conf.valueOf("JCONF01").getMap();
         State topLeft = new State(new Coord(0, 0), map);
         State topMiddle = new State(new Coord(0, 1), map);
         State topRight = new State(new Coord(0, 2), map);
 
-        assertTrue(frontier.isEmpty());
+        assertTrue(QF.isEmpty());
 
-        frontier.insert(new Node(null, topLeft, 0));
+        QF.insert(new Node(null, topLeft, 0));
 
-        assertFalse(frontier.isEmpty());
+        assertFalse(QF.isEmpty());
 
-        frontier.insert(new Node(null, topMiddle, 0));
-        frontier.insert(new Node(null, topRight, 0));
+        QF.insert(new Node(null, topMiddle, 0));
+        QF.insert(new Node(null, topRight, 0));
 
-        assertEquals(new Node(null, topLeft, 0), frontier.remove());
-        assertEquals(new Node(null, topMiddle, 0), frontier.remove());
-        assertEquals(new Node(null, topRight, 0), frontier.remove());
+        assertEquals(new Node(null, topLeft, 0), QF.remove());
+        assertEquals(new Node(null, topMiddle, 0), QF.remove());
+        assertEquals(new Node(null, topRight, 0), QF.remove());
 
-        assertTrue(frontier.isEmpty());
+        assertTrue(QF.isEmpty());
 
-        assertEquals(0, frontier.size());
-        frontier.insert(new Node(null, topLeft, 0));
-        assertEquals(1, frontier.size());
+        assertEquals(0, QF.size());
+        QF.insert(new Node(null, topLeft, 0));
+        assertEquals(1, QF.size());
 
         // should not be able to insert same node twice
-        frontier.insert(new Node(null, topLeft, 0));
-        assertEquals(1, frontier.size());
+        QF.insert(new Node(null, topLeft, 0));
+        assertEquals(1, QF.size());
     }
 
     @Test
     public void testStackFrontier() {
-        StackFrontier frontier = new StackFrontier();
 
-        Map map = Conf.valueOf("JCONF01").getMap();
         State topLeft = new State(new Coord(0, 0), map);
         State topMiddle = new State(new Coord(0, 1), map);
         State topRight = new State(new Coord(0, 2), map);
 
-        assertTrue(frontier.isEmpty());
+        assertTrue(SF.isEmpty());
 
-        frontier.insert(new Node(null, topLeft, 0));
+        SF.insert(new Node(null, topLeft, 0));
 
-        assertFalse(frontier.isEmpty());
+        assertFalse(SF.isEmpty());
 
-        frontier.insert(new Node(null, topMiddle, 0));
-        frontier.insert(new Node(null, topRight, 0));
+        SF.insert(new Node(null, topMiddle, 0));
+        SF.insert(new Node(null, topRight, 0));
 
-        assertEquals(new Node(null, topRight, 0), frontier.remove());
-        assertEquals(new Node(null, topMiddle, 0), frontier.remove());
-        assertEquals(new Node(null, topLeft, 0), frontier.remove());
+        assertEquals(new Node(null, topRight, 0), SF.remove());
+        assertEquals(new Node(null, topMiddle, 0), SF.remove());
+        assertEquals(new Node(null, topLeft, 0), SF.remove());
 
-        assertTrue(frontier.isEmpty());
+        assertTrue(SF.isEmpty());
 
-        assertEquals(0, frontier.size());
-        frontier.insert(new Node(null, topLeft, 0));
-        assertEquals(1, frontier.size());
+        assertEquals(0, SF.size());
+        SF.insert(new Node(null, topLeft, 0));
+        assertEquals(1, SF.size());
 
         // should not be able to insert same node twice
-        frontier.insert(new Node(null, topLeft, 0));
+        SF.insert(new Node(null, topLeft, 0));
 
     }
 
     @Test
     public void testPriorityQueueFrontier() {
 
-        PriorityQueueFrontier frontier = new PriorityQueueFrontier();
+        assertTrue(PQF.isEmpty());
 
-        Map map = Conf.valueOf("JCONF01").getMap();
+        PQF.insert(n2);
+        PQF.insert(n1);
 
-        State s1 = new State(new Coord(0, 0), map);
-        State s2 = new State(new Coord(0, 1), map);
-        State s3 = new State(new Coord(0, 2), map);
-        State s4 = new State(new Coord(1, 0), map);
+        assertEquals(2, PQF.size());
 
-        Node n1 = new Node(null, s1, 0);
-        n1.setFCost(1);
-        Node n2 = new Node(null, s2, 0);
-        n2.setFCost(2);
-        Node n3 = new Node(null, s3, 0);
-        n3.setFCost(3);
-        Node n4 = new Node(null, s4, 0);
-        n4.setFCost(4);
-
-        assertTrue(frontier.isEmpty());
-
-        frontier.insert(n2);
-        frontier.insert(n1);
-
-        assertEquals(2, frontier.size());
-
-        Node removed = frontier.remove();
+        Node removed = PQF.remove();
         assertEquals(n1, removed);
 
-        frontier.insert(n1);
-        frontier.insert(n4);
-        frontier.insert(n3);
+        PQF.insert(n1);
+        PQF.insert(n4);
+        PQF.insert(n3);
 
-        assertEquals(n1, frontier.remove());
-        assertEquals(n2, frontier.remove());
-        assertEquals(n3, frontier.remove());
-        assertEquals(n4, frontier.remove());
+        assertEquals(n1, PQF.remove());
+        assertEquals(n2, PQF.remove());
+        assertEquals(n3, PQF.remove());
+        assertEquals(n4, PQF.remove());
 
-        assertTrue(frontier.isEmpty());
+        assertTrue(PQF.isEmpty());
+    }
+
+    @Test
+    public void testGetNode() {
+
+        PQF.insert(n1);
+        SF.insert(n1);
+        QF.insert(n1);
+        PQF.insert(n2);
+        SF.insert(n2);
+        QF.insert(n2);
+
+        assertEquals(n1, PQF.getNode(n1));
+        assertEquals(n1, SF.getNode(n1));
+        assertEquals(n1, QF.getNode(n1));
+        assertEquals(n2, SF.getNode(n2));
+        assertEquals(n2, QF.getNode(n2));
+        assertEquals(n2, PQF.getNode(n2));
+    }
+
+    @Test
+    public void testContains() {
+        PQF.insert(n1);
+        SF.insert(n1);
+        QF.insert(n1);
+
+        assertTrue(PQF.contains(n1));
+        assertTrue(QF.contains(n1));
+        assertTrue(SF.contains(n1));
+
+        assertFalse(PQF.contains(n2));
+        assertFalse(SF.contains(n2));
+        assertFalse(QF.contains(n2));
     }
 }
