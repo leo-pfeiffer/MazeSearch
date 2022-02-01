@@ -62,7 +62,7 @@ public abstract class Search {
         String path = solutionPath();
         System.out.println(path);
         System.out.println(solution.getCost());
-        System.out.println(explored.size());
+        System.out.println(getExploredNodeCount());
     }
 
     /**
