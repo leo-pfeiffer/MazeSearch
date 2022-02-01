@@ -409,7 +409,7 @@
     "conf": "CONF17",
     "algorithm": "BDS-DFS",
     "exploredNodeCount": 34,
-    "pathCost": 13.0
+    "pathCost": 21.0
   },
   {
     "conf": "CONF17",
