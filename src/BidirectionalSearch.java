@@ -8,8 +8,6 @@ public class BidirectionalSearch extends GeneralSearch {
     private final Search bSearch;
     private final Node goalNode;
 
-    // TODO: Explored Nodes!!
-
     public BidirectionalSearch(Map map, Coord start, Coord goal) {
         super(map, start, goal);
         goalNode = new Node(null, new State(goal, map), 0);
@@ -130,7 +128,7 @@ public class BidirectionalSearch extends GeneralSearch {
      * @param bNode: the node from the backward search
      * @return the full path from start to goal
      * */
-    public Node constructPath(Node fNode, Node bNode) {
+    public static Node constructPath(Node fNode, Node bNode) {
         bNode = bNode.getParent();
         // traverse the path backwards adding to fNode's path
         while (bNode.getParent() != null) {
@@ -148,5 +146,13 @@ public class BidirectionalSearch extends GeneralSearch {
         Set<State> exploredUnion = fSearch.explored.toSet();
         exploredUnion.addAll(bSearch.explored.toSet());
         return exploredUnion.size();
+    }
+
+    public Search getFSearch() {
+        return fSearch;
+    }
+
+    public Search getBSearch() {
+        return bSearch;
     }
 }

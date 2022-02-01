@@ -144,13 +144,60 @@ public class SearchTest {
 
         Search search = new DepthFirstSearch(conf.getMap(), conf.getS(), conf.getG());
 
-        State notGoalState = new State(new Coord(0, conf.getG().getCol() + 1), conf.getMap());
+        State notGoalState = new State(new Coord(0, conf.getG().getCol() + 100), conf.getMap());
         State goalState = new State(conf.getG(), conf.getMap());
         Node notGoal = new Node(null, notGoalState, 0);
         Node goal = new Node(null, goalState, 0);
 
         assertTrue(search.goalTest(goal));
         assertFalse(search.goalTest(notGoal));
+    }
+
+    @Test
+    public void testTerminationCheck() {
+        Conf conf = Conf.valueOf("JCONF01");
+
+        GeneralSearch search = new DepthFirstSearch(conf.getMap(), conf.getS(), conf.getG());
+
+        State notGoalState = new State(new Coord(0, conf.getG().getCol() + 100), conf.getMap());
+        State goalState = new State(conf.getG(), conf.getMap());
+        Node notGoal = new Node(null, notGoalState, 0);
+        Node goal = new Node(null, goalState, 0);
+
+        assertTrue(search.terminationCheck(goal));
+        assertFalse(search.terminationCheck(notGoal));
+    }
+
+    @Test
+    public void testBDSTerminationCheck() {
+        Conf conf = Conf.valueOf("JCONF01");
+
+        BidirectionalSearch search = new BidirectionalSearch(conf.getMap(), new Coord(1, 1), new Coord(5, 5));
+
+        State s1 = new State(new Coord(1, 1), map);
+        State s2 = new State(new Coord(2, 2), map);
+        State s3 = new State(new Coord(3, 3), map);
+        State s4 = new State(new Coord(4, 4), map);
+        State s5 = new State(new Coord(5, 5), map);
+
+        // forward path
+        Node fn1 = new Node(null, s1, 100);
+        Node fn2 = new Node(fn1, s2, 200);
+        Node fn3 = new Node(fn2, s3, 200);
+        Node fn4 = new Node(fn3, s4, 200);
+        Node fn5 = new Node(fn4, s5, 200);
+
+        // backward path
+        Node bn1 = new Node(null, s5, 100);
+        Node bn2 = new Node(bn1, s4, 200);
+        Node bn3 = new Node(bn2, s3, 200);
+        Node bn4 = new Node(bn3, s2, 200);
+        Node bn5 = new Node(bn4, s1, 200);
+
+        assertTrue(search.terminationCheck(fn5, bn2));
+        assertTrue(search.terminationCheck(fn3, bn5));
+        assertTrue(search.terminationCheck(fn5, bn5));
+        assertFalse(search.terminationCheck(fn3, bn3));
     }
 
     @Test
@@ -260,4 +307,104 @@ public class SearchTest {
         assertTrue(newNodes.contains(n3));
     }
 
+    @Test
+    public void testBDSExploredNodes() {
+        BidirectionalSearch search = new BidirectionalSearch(map, new Coord(0, 0), new Coord(0, 0));
+
+        search.getFSearch().explored.add(n1);
+        search.getFSearch().explored.add(n2);
+
+        search.getBSearch().explored.add(n1);
+        search.getBSearch().explored.add(n3);
+
+        assertEquals(search.getExploredNodeCount(), 3);
+    }
+
+    @Test
+    public void testBDSConstructPath() {
+        State s1 = new State(new Coord(1, 1), map);
+        State s2 = new State(new Coord(2, 2), map);
+        State s3 = new State(new Coord(3, 3), map);
+        State s4 = new State(new Coord(4, 4), map);
+        State s5 = new State(new Coord(5, 5), map);
+
+        // forward path
+        Node n1 = new Node(null, s1, 100);
+        Node n2 = new Node(n1, s2, 200);
+        Node fMid = new Node(n2, s3, 300);
+
+        // backward path
+        Node n6 = new Node(null, s5, 300);
+        Node n5 = new Node(n6, s4, 300);
+        Node bMid = new Node(n5, s3, 300);
+
+        // should construct new node that leads from 1,1 to 6,6
+        Node path = BidirectionalSearch.constructPath(fMid, bMid);
+
+        assertEquals(path.getState().getCoord(), new Coord(5, 5));
+        path = path.getParent();
+        assertEquals(path.getState().getCoord(), new Coord(4, 4));
+        path = path.getParent();
+        assertEquals(path.getState().getCoord(), new Coord(3, 3));
+        path = path.getParent();
+        assertEquals(path.getState().getCoord(), new Coord(2, 2));
+        path = path.getParent();
+        assertEquals(path.getState().getCoord(), new Coord(1, 1));
+        assertNull(path.getParent());
+    }
+
+    @Test
+    public void testBDSIntersectionCheckTrue() {
+        BidirectionalSearch search = new BidirectionalSearch(map, new Coord(0, 0), new Coord(0, 0));
+
+        QueueFrontier fFrontier = new QueueFrontier();
+        QueueFrontier bFrontier = new QueueFrontier();
+
+        State s1 = new State(new Coord(1, 1), map);
+        State s2 = new State(new Coord(2, 2), map);
+        State s3 = new State(new Coord(3, 3), map);
+        State s4 = new State(new Coord(4, 4), map);
+        State s5 = new State(new Coord(5, 5), map);
+
+        // forward path
+        Node n1 = new Node(null, s1, 100);
+        Node n2 = new Node(n1, s2, 200);
+        Node fMid = new Node(n2, s3, 300);
+
+        // backward path
+        Node n6 = new Node(null, s5, 300);
+        Node n5 = new Node(n6, s4, 300);
+        Node bMid = new Node(n5, s3, 300);
+
+        fFrontier.insert(n1);
+        fFrontier.insert(n2);
+        fFrontier.insert(fMid);
+
+        bFrontier.insert(n6);
+        bFrontier.insert(n5);
+        bFrontier.insert(bMid);
+
+        search.getFSearch().frontier = fFrontier;
+        search.getBSearch().frontier = bFrontier;
+
+        assertTrue(search.frontierIntersectionCheck());
+    }
+
+    @Test
+    public void testBDSIntersectionCheckFalse() {
+        BidirectionalSearch search = new BidirectionalSearch(map, new Coord(0, 0), new Coord(0, 0));
+
+        QueueFrontier fFrontier = new QueueFrontier();
+        QueueFrontier bFrontier = new QueueFrontier();
+
+        fFrontier.insert(n1);
+        fFrontier.insert(n2);
+
+        bFrontier.insert(n3);
+
+        search.getFSearch().frontier = fFrontier;
+        search.getBSearch().frontier = bFrontier;
+
+        assertFalse(search.frontierIntersectionCheck());
+    }
 }
