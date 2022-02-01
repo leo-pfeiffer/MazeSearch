@@ -1,6 +1,32 @@
 # CS5011-P1
 
-## ⚙️ Makefile
+## Report
+
+The report can be found in `doc/report.pdf`.
+
+## Running the project
+
+Running the project (without tests etc.):
+```bash
+cd src
+javac *.java
+java A1main <Algo> <ConfID> [<2nd Algo>]
+```
+
+To run the unit tests and the evaluation, please refer to 
+the commands provided in the Makefile (see below).
+
+## Project structure
+
+```
++ doc:          Report, test coverage, etc.
++ evaluation:   Evaluation scripts
++ lib:          Dependencies (for unit testing and evaluation)
++ src:          Source code
++ test:         Unit tests
+```
+
+## Makefile
 
 The following commands are available from the root directory of the project
 and can be called using the make command.
@@ -15,4 +41,3 @@ stacscheck   Run stacscheck checks (only on school server)
 evaluation   Run the evaluation (run experiments, create plots)
 help         Print available commands
 ```
-
