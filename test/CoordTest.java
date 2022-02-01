@@ -121,6 +121,13 @@ public class CoordTest {
 
     @Test
     public void testGetManhattanDistance() {
-        // todo
+        Coord start = new Coord(0, 0);
+        Coord topRight = new Coord(0, 3);
+        Coord bottomRight = new Coord(3, 3);
+        Coord bottomLeft = new Coord(3, 0);
+
+        assertEquals(3, start.getManhattanDistance(topRight), 0.001);
+        assertEquals(6, start.getManhattanDistance(bottomRight), 0.001);
+        assertEquals(5, start.getManhattanDistance(bottomLeft), 0.001);
     }
 }

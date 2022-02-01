@@ -46,15 +46,13 @@ public class Coord {
 
 	/**
 	 * Get the "A" coordinate of the current coordinate.
-	 * // todo test
 	 * */
-	public int getACoord() {
+	private int getACoord() {
 		return -row;
 	}
 
 	/**
 	 * Get the "B" coordinate of the current coordinate.
-	 * // todo test
 	 * */
 	public double getBCoord() {
 		return (double) (row + col - getDir()) / 2;
@@ -62,15 +60,13 @@ public class Coord {
 
 	/**
 	 * Get the "C" coordinate of the current coordinate.
-	 * // todo test
 	 * */
-	public double getCCoord() {
+	private double getCCoord() {
 		return (double) (row + col - getDir()) / 2 - row + getDir();
 	}
 
 	/**
 	 * Calculate the distance between two coordinates on a triangle grid.
-	 * // todo test
 	 * */
 	public double getManhattanDistance(Coord other) {
 		double a = Math.abs(getACoord() - other.getACoord());
