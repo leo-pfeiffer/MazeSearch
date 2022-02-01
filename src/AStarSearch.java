@@ -23,7 +23,6 @@ public class AStarSearch extends InformedSearch {
 
     /**
      * In A* search, we need to check if node is contained with higher cost.
-     * // todo test
      * */
     @Override
     protected void addToSuccessors(Node node, ArrayList<Node> newNodes) {

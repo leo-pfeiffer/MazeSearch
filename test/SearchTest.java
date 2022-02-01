@@ -1,7 +1,36 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class SearchTest {
+
+    Map map = Conf.valueOf("JCONF01").getMap();
+
+    State s1 = new State(new Coord(0, 3), map); // hCost = 3
+    State s2 = new State(new Coord(3, 3), map); // hCost = 6
+    State s3 = new State(new Coord(3, 0), map); // hCost = 5
+
+    Node n1 = new Node(null, s1, 100);
+    Node n2 = new Node(null, s2, 200);
+    Node n3 = new Node(null, s3, 300);
+    Node n3Better = new Node(null, s3, 200);
+
+    /**
+     * Helper class that adds some methods to the AStarSearch class to allow for testing.
+     * */
+    private static class TestAStarSearch extends AStarSearch {
+        public TestAStarSearch(Map map, Coord start, Coord goal) {
+            super(map, start, goal);
+        }
+        public void addToExplored(Node node) {
+            explored.add(node);
+        }
+        public void addToFrontier(Node node) {
+            frontier.insert(node);
+        }
+    }
 
     public Boolean testBreadthFirst(Map map, Coord start, Coord goal, Boolean fail) {
         Search search = new BreadthFirstSearch(map, start, goal);
@@ -137,7 +166,7 @@ public class SearchTest {
      * Tests if insert all works with a PriorityQueueFrontier if the path cost is 0.
      * */
     @Test
-    public void testAStarInsertAll1() {
+    public void testInformedSearchInsertAll1() {
         Map map = Conf.valueOf("JCONF01").getMap();
 
         State s1 = new State(new Coord(0, 3), map); // hCost = 3
@@ -163,16 +192,7 @@ public class SearchTest {
      * Tests if insert all works with a PriorityQueueFrontier if we have path costs.
      * */
     @Test
-    public void testAStarInsertAll2() {
-        Map map = Conf.valueOf("JCONF01").getMap();
-
-        State s1 = new State(new Coord(0, 3), map); // hCost = 3
-        State s2 = new State(new Coord(3, 3), map); // hCost = 6
-        State s3 = new State(new Coord(3, 0), map); // hCost = 5
-
-        Node n1 = new Node(null, s1, 100);
-        Node n2 = new Node(null, s2, 200);
-        Node n3 = new Node(null, s3, 300);
+    public void testInformedSearchInsertAll2() {
 
         Node[] nodeArray = {n1, n2, n3};
 
@@ -183,6 +203,61 @@ public class SearchTest {
         assertEquals(n1, search.getFrontier().remove());
         assertEquals(n2, search.getFrontier().remove());
         assertEquals(n3, search.getFrontier().remove());
+    }
+
+
+    /** Tests AStar method addToSuccessors
+     * test condition: replace node in frontier if the new node has a lower path cost
+     * */
+    @Test
+    public void testAStarAddToSuccessorsREPLACE() {
+
+        ArrayList<Node> newNodes = new ArrayList<>();
+        TestAStarSearch search = new TestAStarSearch(map, new Coord(0, 0), new Coord(0, 0));
+
+        search.addToFrontier(n3);
+        search.addToExplored(n3);
+        search.addToSuccessors(n3Better, newNodes);
+
+        assertEquals(search.getFrontier().getNode(n3Better).getCost(), n3Better.getCost(), 0.0);
+        assertNotEquals(search.getFrontier().getNode(n3Better).getCost(), n3.getCost(), 0.0);
+    }
+
+    /** Tests AStar method addToSuccessors
+     * test condition: node must not be in explored yet
+     * */
+    @Test
+    public void testAStarAddToSuccessorsEXPLORED() {
+
+        ArrayList<Node> newNodes = new ArrayList<>();
+        TestAStarSearch search = new TestAStarSearch(map, new Coord(0, 0), new Coord(0, 0));
+        search.addToExplored(n1);
+        search.addToSuccessors(n1, newNodes);
+        search.addToSuccessors(n2, newNodes);
+        search.addToSuccessors(n3, newNodes);
+
+        assertFalse(newNodes.contains(n1));
+        assertTrue(newNodes.contains(n2));
+        assertTrue(newNodes.contains(n3));
+
+    }
+
+    /** Tests AStar method addToSuccessors
+     * test condition: node must not be in frontier yet
+     * */
+    @Test
+    public void testAStarAddToSuccessorsFRONTIER() {
+
+        ArrayList<Node> newNodes = new ArrayList<>();
+        TestAStarSearch search = new TestAStarSearch(map, new Coord(0, 0), new Coord(0, 0));
+        search.addToFrontier(n1);
+        search.addToSuccessors(n1, newNodes);
+        search.addToSuccessors(n2, newNodes);
+        search.addToSuccessors(n3, newNodes);
+
+        assertFalse(newNodes.contains(n1));
+        assertTrue(newNodes.contains(n2));
+        assertTrue(newNodes.contains(n3));
     }
 
 }
